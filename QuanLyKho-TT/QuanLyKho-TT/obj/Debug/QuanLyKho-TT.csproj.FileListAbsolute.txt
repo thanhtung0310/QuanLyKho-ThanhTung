@@ -1,0 +1,9 @@
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\bin\Debug\QuanLyKho-TT.exe.config
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\bin\Debug\QuanLyKho-TT.exe
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\bin\Debug\QuanLyKho-TT.pdb
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho-TT.csprojAssemblyReference.cache
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho_TT.frmLogin.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho_TT.Properties.Resources.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho-TT.csproj.GenerateResource.cache
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho-TT.exe
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho-TT.pdb
