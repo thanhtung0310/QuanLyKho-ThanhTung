@@ -7,3 +7,13 @@ D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLy
 D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho-TT.csproj.GenerateResource.cache
 D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho-TT.exe
 D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho-TT.pdb
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho_TT.frmSignUp.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho_TT.frmMain.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho-TT.exe.licenses
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho_TT.Views.frmCustomer.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho_TT.Views.frmExport.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho_TT.Views.frmImport.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho_TT.Views.frmObject.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho_TT.Views.frmSupplier.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho_TT.Views.frmUnit.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho_TT.Views.frmUser.resources
