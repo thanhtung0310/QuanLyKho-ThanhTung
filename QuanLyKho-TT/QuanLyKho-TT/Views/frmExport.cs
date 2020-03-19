@@ -13,9 +13,15 @@ namespace QuanLyKho_TT.Views
 {
     public partial class frmExport : DevExpress.XtraEditors.XtraForm
     {
+        //Cho phép Admin, Nhân viên
         public frmExport()
         {
             InitializeComponent();
+        }
+
+        private void frmExport_Load(object sender, EventArgs e)
+        {
+            //cập nhật tên người dùng
         }
     }
 }

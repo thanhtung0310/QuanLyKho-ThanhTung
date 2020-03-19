@@ -16,6 +16,7 @@ namespace QuanLyKho_TT
     public partial class frmSignUp : DevExpress.XtraEditors.XtraForm
     {
         AccessDataBase dbAccess = new AccessDataBase();
+        DataTable dtUsers = new DataTable();
 
         public frmSignUp()
         {
@@ -25,34 +26,30 @@ namespace QuanLyKho_TT
         private void txbUsername_Click(object sender, EventArgs e)
         {
             txbUsername.Text = "";
-        }
-
-        private void txbPassword_Click(object sender, EventArgs e)
-        {
             txbPassword.Text = "";
-        }
-
-        private void txbPasswordR_Click(object sender, EventArgs e)
-        {
             txbPasswordR.Text = "";
         }
-
+        
         private void buttonSignUp_Click(object sender, EventArgs e)
         {
-            SqlCommand search = new SqlCommand("select * from Users where Username = '" + txbUsername.Text + "'");
-            SqlCommand insert = new SqlCommand("insert into Users(Username,Password) values('" + txbUsername.Text + "','" + txbPassword.Text + "')");
+            string search = "select * from Users where Username = '" + txbUsername.Text + "'";
 
-            if (txbPasswordR.Text == txbPassword.Text && txbUsername.Text != "" && txbPassword.Text != "" && txbPasswordR.Text != "")
+            SqlCommand insert = new SqlCommand("insert into Users(Username,Password, IdRole) values('" + txbUsername.Text + "','" + txbPassword.Text + "', 4)");            
+            dbAccess.readDatathroughAdapter(search, dtUsers);
+            if (dtUsers.Rows.Count == 0 && txbPasswordR.Text == txbPassword.Text)
             {
-                MessageBox.Show("Đăng ký thành công.", "Thông báo");
+                dbAccess.executeQuery(insert);
+                MessageBox.Show("Đăng ký thành công!!!", "Thông báo.");
                 frmLogin login = new frmLogin();
                 login.Show();
                 Hide();
             }
-            else
+            if (dtUsers.Rows.Count != 0)
             {
-                MessageBox.Show("Vui lòng xem lại các thông tin ở trên.", "Thông báo");
+                MessageBox.Show("Đã tồn tại tên đăng nhập. Vui lòng kiểm tra lại!!!", "Lỗi.");
+                dtUsers.Clear();
             }
+            
         }
 
         private void buttonClose_Click(object sender, EventArgs e)

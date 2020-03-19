@@ -81,7 +81,6 @@
             this.txbPasswordR.Size = new System.Drawing.Size(391, 24);
             this.txbPasswordR.TabIndex = 2;
             this.txbPasswordR.Text = "Nhập lại mật khẩu";
-            this.txbPasswordR.Click += new System.EventHandler(this.txbPasswordR_Click);
             // 
             // buttonSignUp
             // 
@@ -112,7 +111,6 @@
             this.txbPassword.Size = new System.Drawing.Size(391, 24);
             this.txbPassword.TabIndex = 1;
             this.txbPassword.Text = "Mật khẩu";
-            this.txbPassword.Click += new System.EventHandler(this.txbPassword_Click);
             // 
             // txbUsername
             // 

@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExport));
             this.label1 = new System.Windows.Forms.Label();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.avatar = new System.Windows.Forms.PictureBox();
+            this.labelHello = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -42,15 +47,50 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Export";
             // 
+            // logo
+            // 
+            this.logo.Image = global::QuanLyKho_TT.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(12, 12);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(174, 47);
+            this.logo.TabIndex = 24;
+            this.logo.TabStop = false;
+            // 
+            // avatar
+            // 
+            this.avatar.Image = global::QuanLyKho_TT.Properties.Resources.avatar;
+            this.avatar.Location = new System.Drawing.Point(660, 12);
+            this.avatar.Name = "avatar";
+            this.avatar.Size = new System.Drawing.Size(73, 68);
+            this.avatar.TabIndex = 23;
+            this.avatar.TabStop = false;
+            // 
+            // labelHello
+            // 
+            this.labelHello.AutoSize = true;
+            this.labelHello.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Italic);
+            this.labelHello.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.labelHello.Location = new System.Drawing.Point(491, 12);
+            this.labelHello.Name = "labelHello";
+            this.labelHello.Size = new System.Drawing.Size(163, 22);
+            this.labelHello.TabIndex = 22;
+            this.labelHello.Text = "Chào DisplayName,";
+            // 
             // frmExport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(298, 260);
+            this.ClientSize = new System.Drawing.Size(752, 485);
+            this.Controls.Add(this.logo);
+            this.Controls.Add(this.avatar);
+            this.Controls.Add(this.labelHello);
             this.Controls.Add(this.label1);
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("frmExport.IconOptions.SvgImage")));
             this.Name = "frmExport";
             this.Text = "Xuất hàng";
+            this.Load += new System.EventHandler(this.frmExport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -59,5 +99,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.PictureBox avatar;
+        private System.Windows.Forms.Label labelHello;
     }
 }

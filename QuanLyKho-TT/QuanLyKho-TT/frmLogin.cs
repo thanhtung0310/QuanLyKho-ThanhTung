@@ -13,9 +13,11 @@ namespace QuanLyKho_TT
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
         frmSignUp signUp = new frmSignUp();
-        frmMain main = new frmMain();
-        AccessDataBase dbAccess = new AccessDataBase();
+        frmMain main = new frmMain();        
 
+        AccessDataBase dbAccess = new AccessDataBase();
+        DataTable dtUsers = new DataTable();
+        
         public frmLogin()
         {
             InitializeComponent();
@@ -29,33 +31,34 @@ namespace QuanLyKho_TT
 
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
-            /*if ()
-            {*/
-                MessageBox.Show("Đăng nhập thành công.", "Thông báo");
+            string username = txbUsername.Text;
+            string password = txbPassword.Text;
+
+            string query = "select * from users where Username = '" + username + "' and Password = '" + password + "'";
+
+            dbAccess.readDatathroughAdapter(query, dtUsers);
+            if (dtUsers.Rows.Count != 0)
+            {
+                MessageBox.Show("Đăng nhập thành công!!!", "Thông báo.");
                 main.Show();
                 Hide();
-
-           /* }
+            }
             else
             {
-                MessageBox.Show("Tài khoản không tồn tại. Vui lòng đăng ký trước khi đăng nhập.", "Thông báo");
-            }*/
+                MessageBox.Show("Đăng nhập thất bại. Vui lòng kiểm tra lại!!!", "Lỗi.");
+            }            
         }
         
         private void txbUsername_Click(object sender, EventArgs e)
         {
             txbUsername.Text = "";
+            txbPassword.Text = "";
         }
         private void txbUsername_TextChanged(object sender, EventArgs e)
         {
             txbUsername.ForeColor = txbPassword.ForeColor;
         }
-
-        private void txbPassword_Click(object sender, EventArgs e)
-        {
-            txbPassword.Text = "";
-        }
-
+        
         private void checkButtonShow_CheckedChanged(object sender, EventArgs e)
         {
             if (checkButtonShow.Checked)

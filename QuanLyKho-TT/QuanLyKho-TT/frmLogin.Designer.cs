@@ -50,7 +50,7 @@
             this.groupBoxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxLogin.Location = new System.Drawing.Point(33, 1);
             this.groupBoxLogin.Name = "groupBoxLogin";
-            this.groupBoxLogin.Size = new System.Drawing.Size(517, 204);
+            this.groupBoxLogin.Size = new System.Drawing.Size(517, 201);
             this.groupBoxLogin.TabIndex = 0;
             this.groupBoxLogin.TabStop = false;
             // 
@@ -76,7 +76,7 @@
             this.labelSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelSignUp.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Underline);
             this.labelSignUp.ForeColor = System.Drawing.Color.Red;
-            this.labelSignUp.Location = new System.Drawing.Point(232, 156);
+            this.labelSignUp.Location = new System.Drawing.Point(226, 142);
             this.labelSignUp.Name = "labelSignUp";
             this.labelSignUp.Size = new System.Drawing.Size(241, 20);
             this.labelSignUp.TabIndex = 1;
@@ -93,7 +93,7 @@
             this.buttonLogIn.Appearance.Options.UseBorderColor = true;
             this.buttonLogIn.Appearance.Options.UseFont = true;
             this.buttonLogIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonLogIn.Location = new System.Drawing.Point(75, 140);
+            this.buttonLogIn.Location = new System.Drawing.Point(69, 126);
             this.buttonLogIn.Name = "buttonLogIn";
             this.buttonLogIn.Size = new System.Drawing.Size(131, 45);
             this.buttonLogIn.TabIndex = 2;
@@ -111,7 +111,6 @@
             this.txbPassword.TabIndex = 1;
             this.txbPassword.Text = "Mật khẩu";
             this.txbPassword.UseSystemPasswordChar = true;
-            this.txbPassword.Click += new System.EventHandler(this.txbPassword_Click);
             // 
             // txbUsername
             // 
@@ -133,7 +132,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 234);
+            this.ClientSize = new System.Drawing.Size(586, 227);
             this.Controls.Add(this.groupBoxLogin);
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmLogin.IconOptions.LargeImage")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

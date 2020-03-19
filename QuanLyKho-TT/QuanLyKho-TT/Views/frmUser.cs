@@ -13,9 +13,15 @@ namespace QuanLyKho_TT.Views
 {
     public partial class frmUser : DevExpress.XtraEditors.XtraForm
     {
+        //Cho phép Admin
         public frmUser()
         {
             InitializeComponent();
+        }
+
+        private void frmUser_Load(object sender, EventArgs e)
+        {
+            //cập nhật tên người dùng
         }
     }
 }

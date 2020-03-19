@@ -13,6 +13,7 @@ namespace QuanLyKho_TT
 {
     public partial class frmMain : DevExpress.XtraEditors.XtraForm
     {
+        //Cho phép Admin, Nhân viên, Khách hàng
         public frmMain()
         {
             InitializeComponent();
@@ -58,6 +59,35 @@ namespace QuanLyKho_TT
         {
             Views.frmUser frmUser = new Views.frmUser();
             frmUser.Show();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chào mừng đến với phần mềm QUẢN LÝ KHO HÀNG", "Thông báo.");
+
+            //cập nhật tên người dùng
+
+            //cập nhật số lượng hàng nhập, hàng xuất, hàng tồn kho
+        }
+
+        private void groupControl1_Click(object sender, EventArgs e)
+        {
+            //cập nhật số lượng hàng nhập
+        }
+
+        private void groupControl2_Click(object sender, EventArgs e)
+        {
+            //cập nhật số lượng hàng xuất
+        }
+
+        private void groupControl3_Click(object sender, EventArgs e)
+        {
+            //cập nhật số lượng hàng tồn
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+            //cập nhật thông tin vật tư
         }
     }
 }
