@@ -22,6 +22,26 @@ namespace QuanLyKho_TT.Views
         private void frmImport_Load(object sender, EventArgs e)
         {
             //cập nhật tên người dùng
+            labelHello.Text = "Chào " + frmLogin.tendangnhap + ", ";
+        }
+
+        private void labelHome_Click(object sender, EventArgs e)
+        {
+            //trở về màn hình chính
+            frmMain frmMain = new frmMain();
+            frmMain.Show();
+            Hide();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Xác nhận đăng xuất ?", "Thông báo.", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Hide();
+                frmLogin form = new frmLogin();
+                form.Show();
+            }
         }
     }
 }

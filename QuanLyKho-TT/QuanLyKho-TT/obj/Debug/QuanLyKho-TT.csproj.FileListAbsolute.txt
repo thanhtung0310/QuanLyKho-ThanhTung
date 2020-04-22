@@ -17,3 +17,4 @@ D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLy
 D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho_TT.Views.frmSupplier.resources
 D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho_TT.Views.frmUnit.resources
 D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho_TT.Views.frmUser.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QuanLyKho-ThanhTung\QuanLyKho-TT\QuanLyKho-TT\obj\Debug\QuanLyKho-TT.csproj.CoreCompileInputs.cache

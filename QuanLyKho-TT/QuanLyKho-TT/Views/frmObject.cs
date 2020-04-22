@@ -22,6 +22,7 @@ namespace QuanLyKho_TT.Views
         private void frmObject_Load(object sender, EventArgs e)
         {
             //cập nhật tên người dùng
+            labelHello.Text = "Chào " + frmLogin.tendangnhap + ", ";
 
             //load danh sách vật tư có trong CSDL
         }
@@ -49,6 +50,25 @@ namespace QuanLyKho_TT.Views
         private void dataGridViewObject_Click(object sender, EventArgs e)
         {
             //cập nhật thông tin vật tư
+        }
+
+        private void labelHome_Click(object sender, EventArgs e)
+        {
+            //trở về màn hình chính
+            frmMain frmMain= new frmMain();
+            frmMain.Show();
+            Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Xác nhận đăng xuất ?", "Thông báo.", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Hide();
+                frmLogin form = new frmLogin();
+                form.Show();
+            }
         }
     }
 }

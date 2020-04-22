@@ -23,49 +23,57 @@ namespace QuanLyKho_TT
         {
             Views.frmImport frmImport = new Views.frmImport();
             frmImport.Show();
+            Hide();
         }
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
             Views.frmExport frmExport = new Views.frmExport();
             frmExport.Show();
+            Hide();
         }
 
         private void buttonObject_Click(object sender, EventArgs e)
         {
             Views.frmObject frmObject = new Views.frmObject();
             frmObject.Show();
+            Hide();
         }
 
         private void buttonUnit_Click(object sender, EventArgs e)
         {
             Views.frmUnit frmUnit = new Views.frmUnit();
             frmUnit.Show();
+            Hide();
         }
 
         private void buttonSupplier_Click(object sender, EventArgs e)
         {
             Views.frmSupplier frmSupplier = new Views.frmSupplier();
             frmSupplier.Show();
+            Hide();
         }
 
         private void buttonCustomer_Click(object sender, EventArgs e)
         {
             Views.frmCustomer frmCustomer = new Views.frmCustomer();
             frmCustomer.Show();
+            Hide();
         }
 
         private void buttonUser_Click(object sender, EventArgs e)
         {
             Views.frmUser frmUser = new Views.frmUser();
             frmUser.Show();
+            Hide();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Chào mừng đến với phần mềm QUẢN LÝ KHO HÀNG", "Thông báo.");
+            //MessageBox.Show("Chào mừng đến với phần mềm QUẢN LÝ KHO HÀNG", "Thông báo.");
 
             //cập nhật tên người dùng
+            labelHello.Text = "Chào " + frmLogin.tendangnhap + ", ";
 
             //cập nhật số lượng hàng nhập, hàng xuất, hàng tồn kho
         }
@@ -88,6 +96,17 @@ namespace QuanLyKho_TT
         private void dataGridView1_Click(object sender, EventArgs e)
         {
             //cập nhật thông tin vật tư
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Xác nhận đăng xuất ?", "Thông báo.", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Hide();
+                frmLogin form = new frmLogin();
+                form.Show();
+            }
         }
     }
 }

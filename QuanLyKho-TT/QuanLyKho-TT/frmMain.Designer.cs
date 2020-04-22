@@ -54,11 +54,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelHello = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.DisplayName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -167,11 +168,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cambria", 14F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(14, 80);
+            this.label4.Location = new System.Drawing.Point(36, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 28);
+            this.label4.Size = new System.Drawing.Size(77, 28);
             this.label4.TabIndex = 1;
-            this.label4.Text = "ImportNum";
+            this.label4.Text = "99998";
             // 
             // label1
             // 
@@ -198,11 +199,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cambria", 14F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label5.Location = new System.Drawing.Point(9, 80);
+            this.label5.Location = new System.Drawing.Point(34, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 28);
+            this.label5.Size = new System.Drawing.Size(77, 28);
             this.label5.TabIndex = 2;
-            this.label5.Text = "ExportNum";
+            this.label5.Text = "88887";
             // 
             // label2
             // 
@@ -229,11 +230,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cambria", 14F);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(5, 80);
+            this.label6.Location = new System.Drawing.Point(24, 80);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 28);
+            this.label6.Size = new System.Drawing.Size(77, 28);
             this.label6.TabIndex = 3;
-            this.label6.Text = "StockNum";
+            this.label6.Text = "77776";
             // 
             // label3
             // 
@@ -263,16 +264,17 @@
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
-            // label7
+            // labelHello
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Italic);
-            this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label7.Location = new System.Drawing.Point(351, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(163, 22);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Chào DisplayName,";
+            this.labelHello.AutoSize = true;
+            this.labelHello.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Italic);
+            this.labelHello.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.labelHello.Location = new System.Drawing.Point(351, 12);
+            this.labelHello.Name = "labelHello";
+            this.labelHello.Size = new System.Drawing.Size(163, 22);
+            this.labelHello.TabIndex = 19;
+            this.labelHello.Text = "Chào DisplayName,";
+            this.labelHello.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // dataGridView1
             // 
@@ -316,15 +318,28 @@
             this.Price.Visible = false;
             this.Price.Width = 125;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Underline);
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(390, 37);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 22);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Đăng xuất";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 591);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.labelHello);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
@@ -376,10 +391,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelHello;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn DisplayName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.Label label7;
     }
 }

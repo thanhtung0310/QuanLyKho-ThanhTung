@@ -43,7 +43,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.LuongCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewObject = new System.Windows.Forms.DataGridView();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.MaLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelID = new System.Windows.Forms.Label();
             this.labelAdd = new System.Windows.Forms.Label();
@@ -57,8 +57,10 @@
             this.labelHello = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
             this.avatar = new System.Windows.Forms.PictureBox();
+            this.labelHome = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.gBoxDelete.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObject)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.gboxAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
@@ -71,7 +73,7 @@
             this.buttonSearch.Location = new System.Drawing.Point(621, 82);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(57, 29);
-            this.buttonSearch.TabIndex = 7;
+            this.buttonSearch.TabIndex = 6;
             this.buttonSearch.Text = "Tìm";
             this.buttonSearch.UseVisualStyleBackColor = false;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
@@ -85,7 +87,7 @@
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(174, 48);
-            this.buttonEdit.TabIndex = 10;
+            this.buttonEdit.TabIndex = 9;
             this.buttonEdit.Text = "Chỉnh sửa";
             this.buttonEdit.UseVisualStyleBackColor = false;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
@@ -110,7 +112,7 @@
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(174, 48);
-            this.buttonDelete.TabIndex = 11;
+            this.buttonDelete.TabIndex = 10;
             this.buttonDelete.Text = "Xóa";
             this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
@@ -145,7 +147,7 @@
             this.cbbSupplierB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbSupplierB.Name = "cbbSupplierB";
             this.cbbSupplierB.Size = new System.Drawing.Size(329, 35);
-            this.cbbSupplierB.TabIndex = 31;
+            this.cbbSupplierB.TabIndex = 8;
             // 
             // cbbUnitB
             // 
@@ -156,7 +158,7 @@
             this.cbbUnitB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbUnitB.Name = "cbbUnitB";
             this.cbbUnitB.Size = new System.Drawing.Size(329, 35);
-            this.cbbUnitB.TabIndex = 30;
+            this.cbbUnitB.TabIndex = 7;
             // 
             // tbNameB
             // 
@@ -166,7 +168,7 @@
             this.tbNameB.Multiline = true;
             this.tbNameB.Name = "tbNameB";
             this.tbNameB.Size = new System.Drawing.Size(329, 36);
-            this.tbNameB.TabIndex = 29;
+            this.tbNameB.TabIndex = 5;
             // 
             // label2
             // 
@@ -228,23 +230,23 @@
             this.NgayCong.Visible = false;
             this.NgayCong.Width = 125;
             // 
-            // dataGridViewObject
+            // dgv
             // 
-            this.dataGridViewObject.AllowUserToAddRows = false;
-            this.dataGridViewObject.AllowUserToDeleteRows = false;
-            this.dataGridViewObject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewObject.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.AllowUserToDeleteRows = false;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaLuong,
             this.NgayCong,
             this.LuongCB});
-            this.dataGridViewObject.Location = new System.Drawing.Point(330, 442);
-            this.dataGridViewObject.Name = "dataGridViewObject";
-            this.dataGridViewObject.ReadOnly = true;
-            this.dataGridViewObject.RowHeadersWidth = 51;
-            this.dataGridViewObject.RowTemplate.Height = 24;
-            this.dataGridViewObject.Size = new System.Drawing.Size(725, 154);
-            this.dataGridViewObject.TabIndex = 38;
-            this.dataGridViewObject.Click += new System.EventHandler(this.dataGridViewObject_Click);
+            this.dgv.Location = new System.Drawing.Point(330, 442);
+            this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
+            this.dgv.RowHeadersWidth = 51;
+            this.dgv.RowTemplate.Height = 24;
+            this.dgv.Size = new System.Drawing.Size(725, 154);
+            this.dgv.TabIndex = 11;
+            this.dgv.Click += new System.EventHandler(this.dataGridViewObject_Click);
             // 
             // MaLuong
             // 
@@ -296,7 +298,7 @@
             this.buttonA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonA.Name = "buttonA";
             this.buttonA.Size = new System.Drawing.Size(191, 48);
-            this.buttonA.TabIndex = 5;
+            this.buttonA.TabIndex = 4;
             this.buttonA.Text = "Thêm mới";
             this.buttonA.UseVisualStyleBackColor = false;
             this.buttonA.Click += new System.EventHandler(this.buttonA_Click);
@@ -339,7 +341,7 @@
             this.cbbSupplierA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbSupplierA.Name = "cbbSupplierA";
             this.cbbSupplierA.Size = new System.Drawing.Size(329, 35);
-            this.cbbSupplierA.TabIndex = 25;
+            this.cbbSupplierA.TabIndex = 3;
             // 
             // cbbUnitA
             // 
@@ -350,7 +352,7 @@
             this.cbbUnitA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbUnitA.Name = "cbbUnitA";
             this.cbbUnitA.Size = new System.Drawing.Size(329, 35);
-            this.cbbUnitA.TabIndex = 24;
+            this.cbbUnitA.TabIndex = 2;
             // 
             // tbNameA
             // 
@@ -360,7 +362,7 @@
             this.tbNameA.Multiline = true;
             this.tbNameA.Name = "tbNameA";
             this.tbNameA.Size = new System.Drawing.Size(329, 36);
-            this.tbNameA.TabIndex = 23;
+            this.tbNameA.TabIndex = 1;
             // 
             // labelHello
             // 
@@ -391,17 +393,42 @@
             this.avatar.TabIndex = 41;
             this.avatar.TabStop = false;
             // 
+            // labelHome
+            // 
+            this.labelHome.AutoSize = true;
+            this.labelHome.Font = new System.Drawing.Font("Cambria", 10F);
+            this.labelHome.Location = new System.Drawing.Point(192, 12);
+            this.labelHome.Name = "labelHome";
+            this.labelHome.Size = new System.Drawing.Size(154, 20);
+            this.labelHome.TabIndex = 0;
+            this.labelHome.Text = "< Về màn hình chính";
+            this.labelHome.Click += new System.EventHandler(this.labelHome_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Underline);
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(1175, 37);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 22);
+            this.label7.TabIndex = 43;
+            this.label7.Text = "Đăng xuất";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // frmObject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1392, 625);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.labelHome);
             this.Controls.Add(this.logo);
             this.Controls.Add(this.avatar);
             this.Controls.Add(this.labelHello);
             this.Controls.Add(this.gBoxDelete);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.dataGridViewObject);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.gboxAdd);
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmObject.IconOptions.LargeImage")));
             this.Name = "frmObject";
@@ -409,7 +436,7 @@
             this.Load += new System.EventHandler(this.frmObject_Load);
             this.gBoxDelete.ResumeLayout(false);
             this.gBoxDelete.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObject)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.gboxAdd.ResumeLayout(false);
             this.gboxAdd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
@@ -429,7 +456,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewTextBoxColumn LuongCB;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayCong;
-        private System.Windows.Forms.DataGridView dataGridViewObject;
+        private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLuong;
         private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.Label labelAdd;
@@ -449,5 +476,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelHome;
+        private System.Windows.Forms.Label label7;
     }
 }

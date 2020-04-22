@@ -23,6 +23,9 @@ namespace QuanLyKho_TT
             InitializeComponent();
         }
 
+        public static string tendangnhap;
+        public static string matkhaucu;
+
         private void labelSignUp_Click(object sender, EventArgs e)
         {
             signUp.Show();
@@ -40,6 +43,8 @@ namespace QuanLyKho_TT
             if (dtUsers.Rows.Count != 0)
             {
                 MessageBox.Show("Đăng nhập thành công!!!", "Thông báo.");
+                tendangnhap = username;
+                matkhaucu = password;
                 main.Show();
                 Hide();
             }
