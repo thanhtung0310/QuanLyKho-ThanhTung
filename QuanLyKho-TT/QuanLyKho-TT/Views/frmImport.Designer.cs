@@ -56,9 +56,9 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbOutPriceB = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbInpPriceB = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -243,6 +243,7 @@
             this.cbbObjA.Name = "cbbObjA";
             this.cbbObjA.Size = new System.Drawing.Size(329, 34);
             this.cbbObjA.TabIndex = 2;
+            this.cbbObjA.Text = "1";
             // 
             // tbIDA
             // 
@@ -298,9 +299,9 @@
             this.groupBox2.Controls.Add(this.buttonEdit);
             this.groupBox2.Controls.Add(this.buttonDelete);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.tbOutPriceB);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.tbInpPriceB);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label11);
@@ -336,6 +337,7 @@
             this.cbbObjB.Name = "cbbObjB";
             this.cbbObjB.Size = new System.Drawing.Size(329, 34);
             this.cbbObjB.TabIndex = 9;
+            this.cbbObjB.Text = "1";
             this.cbbObjB.TextChanged += new System.EventHandler(this.cbbObjB_TextChanged);
             // 
             // tbIDB
@@ -395,15 +397,15 @@
             this.label5.TabIndex = 36;
             this.label5.Text = "CHỈNH SỬA VÀ XÓA ";
             // 
-            // textBox1
+            // tbOutPriceB
             // 
-            this.textBox1.Font = new System.Drawing.Font("Cambria", 14F);
-            this.textBox1.Location = new System.Drawing.Point(244, 238);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(329, 36);
-            this.textBox1.TabIndex = 12;
+            this.tbOutPriceB.Font = new System.Drawing.Font("Cambria", 14F);
+            this.tbOutPriceB.Location = new System.Drawing.Point(244, 238);
+            this.tbOutPriceB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbOutPriceB.Multiline = true;
+            this.tbOutPriceB.Name = "tbOutPriceB";
+            this.tbOutPriceB.Size = new System.Drawing.Size(329, 36);
+            this.tbOutPriceB.TabIndex = 12;
             // 
             // label8
             // 
@@ -415,15 +417,15 @@
             this.label8.TabIndex = 44;
             this.label8.Text = "Giá bán: ";
             // 
-            // textBox2
+            // tbInpPriceB
             // 
-            this.textBox2.Font = new System.Drawing.Font("Cambria", 14F);
-            this.textBox2.Location = new System.Drawing.Point(244, 184);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(329, 36);
-            this.textBox2.TabIndex = 11;
+            this.tbInpPriceB.Font = new System.Drawing.Font("Cambria", 14F);
+            this.tbInpPriceB.Location = new System.Drawing.Point(244, 184);
+            this.tbInpPriceB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbInpPriceB.Multiline = true;
+            this.tbInpPriceB.Name = "tbInpPriceB";
+            this.tbInpPriceB.Size = new System.Drawing.Size(329, 36);
+            this.tbInpPriceB.TabIndex = 11;
             // 
             // label9
             // 
@@ -564,9 +566,9 @@
         private System.Windows.Forms.DateTimePicker dateA;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbOutPriceB;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbInpPriceB;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
