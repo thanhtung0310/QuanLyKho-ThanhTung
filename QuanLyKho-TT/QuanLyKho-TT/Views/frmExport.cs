@@ -23,6 +23,14 @@ namespace QuanLyKho_TT.Views
         {
             //cập nhật tên người dùng
             labelHello.Text = "Chào " + frmLogin.tendangnhap + ", ";
+
+            //load 2 bảng và 2cbb
+            loadData();
+        }
+
+        private void loadData()
+        {
+            //load thông tin 2 dgv và 2cbb khách hàng
         }
 
         private void labelHome_Click(object sender, EventArgs e)
@@ -50,6 +58,25 @@ namespace QuanLyKho_TT.Views
             frmMain frmMain = new frmMain();
             frmMain.Show();
             Hide();
+        }
+
+        private void buttonA_Click(object sender, EventArgs e)
+        {
+            //nhập mã (mã INputInfo)
+            //Nhập số lượng -> OutputInfo
+            //chọn khách hàng
+            //chọn ngày -> Outputs
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            //nhập mã InputInfo -> lấy thông tin
+            //thay đổi số lượng, khách hàng, thời gian
+        }
+
+        private void logo_Click(object sender, EventArgs e)
+        {
+            labelHome_Click(this, new EventArgs());
         }
     }
 }

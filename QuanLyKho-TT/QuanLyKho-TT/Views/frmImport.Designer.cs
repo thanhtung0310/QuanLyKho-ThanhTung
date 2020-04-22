@@ -35,7 +35,6 @@
             this.labelHome = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
-            this.tbAmountA = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tbInpPriceA = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,30 +43,38 @@
             this.label7 = new System.Windows.Forms.Label();
             this.buttonA = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbObjectA = new System.Windows.Forms.TextBox();
-            this.dateTimePickerA = new System.Windows.Forms.DateTimePicker();
+            this.cbbObjA = new System.Windows.Forms.ComboBox();
+            this.tbIDA = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.numberA = new System.Windows.Forms.NumericUpDown();
+            this.dateA = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tbObjectB = new System.Windows.Forms.TextBox();
+            this.numberB = new System.Windows.Forms.NumericUpDown();
+            this.cbbObjB = new System.Windows.Forms.ComboBox();
+            this.tbIDB = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numberA)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numberB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
             // 
             // logo
@@ -78,6 +85,7 @@
             this.logo.Size = new System.Drawing.Size(174, 47);
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
+            this.logo.Click += new System.EventHandler(this.logo_Click);
             // 
             // avatar
             // 
@@ -115,7 +123,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 22F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(111, 19);
+            this.label2.Location = new System.Drawing.Point(36, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(389, 43);
             this.label2.TabIndex = 36;
@@ -130,16 +138,6 @@
             this.labelID.Size = new System.Drawing.Size(98, 32);
             this.labelID.TabIndex = 38;
             this.labelID.Text = "Vật tư:";
-            // 
-            // tbAmountA
-            // 
-            this.tbAmountA.Font = new System.Drawing.Font("Cambria", 14F);
-            this.tbAmountA.Location = new System.Drawing.Point(244, 130);
-            this.tbAmountA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbAmountA.Multiline = true;
-            this.tbAmountA.Name = "tbAmountA";
-            this.tbAmountA.Size = new System.Drawing.Size(329, 36);
-            this.tbAmountA.TabIndex = 2;
             // 
             // label6
             // 
@@ -159,7 +157,7 @@
             this.tbInpPriceA.Multiline = true;
             this.tbInpPriceA.Name = "tbInpPriceA";
             this.tbInpPriceA.Size = new System.Drawing.Size(329, 36);
-            this.tbInpPriceA.TabIndex = 3;
+            this.tbInpPriceA.TabIndex = 4;
             // 
             // label1
             // 
@@ -179,7 +177,7 @@
             this.tbOutPriceA.Multiline = true;
             this.tbOutPriceA.Name = "tbOutPriceA";
             this.tbOutPriceA.Size = new System.Drawing.Size(329, 36);
-            this.tbOutPriceA.TabIndex = 4;
+            this.tbOutPriceA.TabIndex = 5;
             // 
             // label3
             // 
@@ -210,14 +208,18 @@
             this.buttonA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonA.Name = "buttonA";
             this.buttonA.Size = new System.Drawing.Size(191, 48);
-            this.buttonA.TabIndex = 6;
+            this.buttonA.TabIndex = 7;
             this.buttonA.Text = "Thêm mới";
             this.buttonA.UseVisualStyleBackColor = false;
+            this.buttonA.Click += new System.EventHandler(this.buttonA_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tbObjectA);
-            this.groupBox1.Controls.Add(this.dateTimePickerA);
+            this.groupBox1.Controls.Add(this.cbbObjA);
+            this.groupBox1.Controls.Add(this.tbIDA);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.numberA);
+            this.groupBox1.Controls.Add(this.dateA);
             this.groupBox1.Controls.Add(this.buttonA);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label2);
@@ -225,7 +227,6 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tbInpPriceA);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.tbAmountA);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.labelID);
             this.groupBox1.Location = new System.Drawing.Point(28, 96);
@@ -234,111 +235,165 @@
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
             // 
-            // tbObjectA
+            // cbbObjA
             // 
-            this.tbObjectA.Font = new System.Drawing.Font("Cambria", 14F);
-            this.tbObjectA.Location = new System.Drawing.Point(244, 75);
-            this.tbObjectA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbObjectA.Multiline = true;
-            this.tbObjectA.Name = "tbObjectA";
-            this.tbObjectA.Size = new System.Drawing.Size(329, 36);
-            this.tbObjectA.TabIndex = 1;
+            this.cbbObjA.Font = new System.Drawing.Font("Cambria", 13F);
+            this.cbbObjA.FormattingEnabled = true;
+            this.cbbObjA.Location = new System.Drawing.Point(244, 79);
+            this.cbbObjA.Name = "cbbObjA";
+            this.cbbObjA.Size = new System.Drawing.Size(329, 34);
+            this.cbbObjA.TabIndex = 2;
             // 
-            // dateTimePickerA
+            // tbIDA
             // 
-            this.dateTimePickerA.Font = new System.Drawing.Font("Cambria", 14F);
-            this.dateTimePickerA.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerA.Location = new System.Drawing.Point(244, 297);
-            this.dateTimePickerA.Name = "dateTimePickerA";
-            this.dateTimePickerA.Size = new System.Drawing.Size(329, 35);
-            this.dateTimePickerA.TabIndex = 5;
+            this.tbIDA.Font = new System.Drawing.Font("Cambria", 10F);
+            this.tbIDA.Location = new System.Drawing.Point(504, 31);
+            this.tbIDA.Name = "tbIDA";
+            this.tbIDA.Size = new System.Drawing.Size(65, 27);
+            this.tbIDA.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label14.Location = new System.Drawing.Point(431, 38);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 20);
+            this.label14.TabIndex = 53;
+            this.label14.Text = "Đơn số";
+            // 
+            // numberA
+            // 
+            this.numberA.Font = new System.Drawing.Font("Cambria", 14F);
+            this.numberA.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numberA.Location = new System.Drawing.Point(244, 128);
+            this.numberA.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numberA.Name = "numberA";
+            this.numberA.Size = new System.Drawing.Size(325, 35);
+            this.numberA.TabIndex = 3;
+            // 
+            // dateA
+            // 
+            this.dateA.Font = new System.Drawing.Font("Cambria", 14F);
+            this.dateA.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateA.Location = new System.Drawing.Point(244, 288);
+            this.dateA.Name = "dateA";
+            this.dateA.Size = new System.Drawing.Size(329, 35);
+            this.dateA.TabIndex = 6;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.tbObjectB);
+            this.groupBox2.Controls.Add(this.numberB);
+            this.groupBox2.Controls.Add(this.cbbObjB);
+            this.groupBox2.Controls.Add(this.tbIDB);
+            this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.buttonEdit);
             this.groupBox2.Controls.Add(this.buttonDelete);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Location = new System.Drawing.Point(641, 96);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(596, 422);
+            this.groupBox2.Size = new System.Drawing.Size(596, 353);
             this.groupBox2.TabIndex = 49;
             this.groupBox2.TabStop = false;
             // 
-            // tbObjectB
+            // numberB
             // 
-            this.tbObjectB.Font = new System.Drawing.Font("Cambria", 14F);
-            this.tbObjectB.Location = new System.Drawing.Point(244, 75);
-            this.tbObjectB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbObjectB.Multiline = true;
-            this.tbObjectB.Name = "tbObjectB";
-            this.tbObjectB.Size = new System.Drawing.Size(329, 36);
-            this.tbObjectB.TabIndex = 7;
+            this.numberB.Font = new System.Drawing.Font("Cambria", 14F);
+            this.numberB.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numberB.Location = new System.Drawing.Point(244, 130);
+            this.numberB.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numberB.Name = "numberB";
+            this.numberB.Size = new System.Drawing.Size(329, 35);
+            this.numberB.TabIndex = 10;
+            // 
+            // cbbObjB
+            // 
+            this.cbbObjB.Font = new System.Drawing.Font("Cambria", 13F);
+            this.cbbObjB.FormattingEnabled = true;
+            this.cbbObjB.Location = new System.Drawing.Point(244, 81);
+            this.cbbObjB.Name = "cbbObjB";
+            this.cbbObjB.Size = new System.Drawing.Size(329, 34);
+            this.cbbObjB.TabIndex = 9;
+            this.cbbObjB.TextChanged += new System.EventHandler(this.cbbObjB_TextChanged);
+            // 
+            // tbIDB
+            // 
+            this.tbIDB.Font = new System.Drawing.Font("Cambria", 10F);
+            this.tbIDB.Location = new System.Drawing.Point(508, 31);
+            this.tbIDB.Name = "tbIDB";
+            this.tbIDB.Size = new System.Drawing.Size(65, 27);
+            this.tbIDB.TabIndex = 8;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label15.Location = new System.Drawing.Point(435, 38);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(59, 20);
+            this.label15.TabIndex = 55;
+            this.label15.Text = "Đơn số";
             // 
             // buttonEdit
             // 
             this.buttonEdit.BackColor = System.Drawing.Color.ForestGreen;
             this.buttonEdit.Font = new System.Drawing.Font("Cambria", 18F);
             this.buttonEdit.ForeColor = System.Drawing.Color.White;
-            this.buttonEdit.Location = new System.Drawing.Point(74, 356);
+            this.buttonEdit.Location = new System.Drawing.Point(69, 288);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(174, 48);
-            this.buttonEdit.TabIndex = 12;
+            this.buttonEdit.TabIndex = 14;
             this.buttonEdit.Text = "Chỉnh sửa";
             this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDelete
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.DarkRed;
             this.buttonDelete.Font = new System.Drawing.Font("Cambria", 18F);
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(362, 356);
+            this.buttonDelete.Location = new System.Drawing.Point(361, 288);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(174, 48);
-            this.buttonDelete.TabIndex = 13;
+            this.buttonDelete.TabIndex = 15;
             this.buttonDelete.Text = "Xóa";
             this.buttonDelete.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Cambria", 14F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(244, 297);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(329, 35);
-            this.dateTimePicker1.TabIndex = 11;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(21, 288);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 32);
-            this.label4.TabIndex = 46;
-            this.label4.Text = "Ngày khởi tạo:";
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 22F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Cambria", 20F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(28, 19);
+            this.label5.Location = new System.Drawing.Point(48, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(536, 43);
+            this.label5.Size = new System.Drawing.Size(319, 40);
             this.label5.TabIndex = 36;
-            this.label5.Text = "CHỈNH SỬA VÀ XÓA ĐƠN HÀNG";
+            this.label5.Text = "CHỈNH SỬA VÀ XÓA ";
             // 
             // textBox1
             // 
@@ -348,7 +403,7 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(329, 36);
-            this.textBox1.TabIndex = 10;
+            this.textBox1.TabIndex = 12;
             // 
             // label8
             // 
@@ -368,7 +423,7 @@
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(329, 36);
-            this.textBox2.TabIndex = 9;
+            this.textBox2.TabIndex = 11;
             // 
             // label9
             // 
@@ -379,16 +434,6 @@
             this.label9.Size = new System.Drawing.Size(136, 32);
             this.label9.TabIndex = 42;
             this.label9.Text = "Giá nhập: ";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Cambria", 14F);
-            this.textBox3.Location = new System.Drawing.Point(244, 130);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(329, 36);
-            this.textBox3.TabIndex = 8;
             // 
             // label10
             // 
@@ -414,7 +459,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(519, 532);
+            this.label13.Location = new System.Drawing.Point(735, 529);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(273, 32);
             this.label13.TabIndex = 51;
@@ -425,13 +470,13 @@
             this.dgv.AllowUserToAddRows = false;
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(289, 567);
+            this.dgv.Location = new System.Drawing.Point(489, 564);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 24;
             this.dgv.Size = new System.Drawing.Size(725, 154);
-            this.dgv.TabIndex = 50;
+            this.dgv.TabIndex = 17;
             // 
             // label12
             // 
@@ -445,11 +490,33 @@
             this.label12.Text = "Đăng xuất";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold);
+            this.label16.Location = new System.Drawing.Point(144, 529);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(227, 32);
+            this.label16.TabIndex = 53;
+            this.label16.Text = "Danh sách vật tư:";
+            // 
+            // dgv1
+            // 
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Location = new System.Drawing.Point(100, 564);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.RowHeadersWidth = 51;
+            this.dgv1.RowTemplate.Height = 24;
+            this.dgv1.Size = new System.Drawing.Size(314, 154);
+            this.dgv1.TabIndex = 16;
+            // 
             // frmImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1267, 730);
+            this.ClientSize = new System.Drawing.Size(1267, 736);
+            this.Controls.Add(this.dgv1);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dgv);
@@ -467,9 +534,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numberA)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numberB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,7 +553,6 @@
         private System.Windows.Forms.Label labelHome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelID;
-        private System.Windows.Forms.TextBox tbAmountA;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbInpPriceA;
         private System.Windows.Forms.Label label1;
@@ -492,24 +561,29 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonA;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePickerA;
+        private System.Windows.Forms.DateTimePicker dateA;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.TextBox tbObjectA;
-        private System.Windows.Forms.TextBox tbObjectB;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown numberA;
+        private System.Windows.Forms.TextBox tbIDA;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cbbObjA;
+        private System.Windows.Forms.ComboBox cbbObjB;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DataGridView dgv1;
+        private System.Windows.Forms.TextBox tbIDB;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.NumericUpDown numberB;
     }
 }

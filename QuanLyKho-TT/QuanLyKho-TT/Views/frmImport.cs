@@ -23,6 +23,14 @@ namespace QuanLyKho_TT.Views
         {
             //cập nhật tên người dùng
             labelHello.Text = "Chào " + frmLogin.tendangnhap + ", ";
+
+            //load thông tin trong bảng và cbb
+            loadData();
+        }
+
+        private void loadData()
+        {
+            //load thông tin ở 2 bảng và 2 cbb
         }
 
         private void labelHome_Click(object sender, EventArgs e)
@@ -42,6 +50,34 @@ namespace QuanLyKho_TT.Views
                 frmLogin form = new frmLogin();
                 form.Show();
             }
+        }
+
+        private void buttonA_Click(object sender, EventArgs e)
+        {
+            //theo mã đơn hàng, nhập hàng theo yêu cầu
+            //nếu mã đã có thì thêm vào InputInfo
+            //nếu mã chưa có thì thêm vào Input + InputInfo
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            //theo mã đơn hàng và mã vật tư, chỉnh sửa thông tin
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            //theo mã đơn hàng và mã vật tư, xóa thông tin 
+        }
+
+        private void cbbObjB_TextChanged(object sender, EventArgs e)
+        {
+            //sau khi nhập mã đơn
+            //chọn vật tư thì tự động điền thông tin đơn
+        }
+
+        private void logo_Click(object sender, EventArgs e)
+        {
+            labelHome_Click(this, new EventArgs());
         }
     }
 }

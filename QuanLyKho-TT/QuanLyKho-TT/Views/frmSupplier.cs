@@ -47,11 +47,18 @@ namespace QuanLyKho_TT.Views
         private void tbNameB_KeyDown(object sender, KeyEventArgs e)
         {
             //nhấn nút F12 để tìm kiếm nhanh thông tin
+            //giống frmCustomer
         }
 
         private void tbNameB_Click(object sender, EventArgs e)
         {
             //hiện thông báo 'nhấn nút f12'
+            //giống frmCustomer
+        }
+
+        private void logo_Click(object sender, EventArgs e)
+        {
+            labelHome_Click(this, new EventArgs());
         }
     }
 }

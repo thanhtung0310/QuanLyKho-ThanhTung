@@ -72,6 +72,7 @@
             this.logo.Size = new System.Drawing.Size(174, 47);
             this.logo.TabIndex = 50;
             this.logo.TabStop = false;
+            this.logo.Click += new System.EventHandler(this.logo_Click);
             // 
             // labelHello
             // 

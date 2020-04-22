@@ -8,13 +8,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using QuanLyKho_TT.Model;
+using System.Data.SqlClient;
 
 namespace QuanLyKho_TT
 {
     public partial class frmMain : DevExpress.XtraEditors.XtraForm
     {
-        DataTable nhap = new DataTable();
-        DataTable xuat = new DataTable();
+        AccessDataBase main = new AccessDataBase();
         public frmMain()
         {
             InitializeComponent();
@@ -28,27 +29,33 @@ namespace QuanLyKho_TT
             labelHello.Text = "Chào " + frmLogin.tendangnhap + ", ";
 
             //cập nhật số lượng hàng nhập, hàng xuất, hàng tồn kho
+            loadData();
             
         }
 
-        private void groupControl1_Click(object sender, EventArgs e)
+        private void loadData()
         {
-            //cập nhật số lượng hàng nhập
-        }
+            //load tất cả thông tin có trong form 
+            SqlDataAdapter da = new SqlDataAdapter("select DisplayName, SUM(input.Count) LuongNhap, SUM(output.Count) LuongXuat " +
+                "from INPUTINFO input, OUTPUTINFO output, OBJECT obj " +
+                "where input.IdObject = obj.Id and output.IdObject = input.IdObject " +
+                "group by DisplayName", AccessDataBase.connection);
+            DataTable dt = new DataTable();
 
-        private void groupControl2_Click(object sender, EventArgs e)
-        {
-            //cập nhật số lượng hàng xuất
-        }
+            da.Fill(dt);
+            dgv.DataSource = dt;
 
-        private void groupControl3_Click(object sender, EventArgs e)
-        {
-            //cập nhật số lượng hàng tồn
-        }
-
-        private void dataGridView1_Click(object sender, EventArgs e)
-        {
-            //cập nhật thông tin vật tư
+            //số lượng nhập
+            SqlCommand soNhap = new SqlCommand("select SUM(Count)from INPUTINFO", AccessDataBase.connection);
+            int numIn = (int)soNhap.ExecuteScalar();
+            labelIn.Text = numIn.ToString();
+            //số lượng xuất
+            SqlCommand soXuat = new SqlCommand("select SUM(Count)from OUTPUTINFO", AccessDataBase.connection);
+            int numOut = (int)soXuat.ExecuteScalar();
+            labelOut.Text = numOut.ToString();
+            //số lượng tồn
+            int numStore = numIn - numOut;
+            labelStore.Text = numStore.ToString();
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -109,6 +116,24 @@ namespace QuanLyKho_TT
             Views.frmUser frmUser = new Views.frmUser();
             frmUser.Show();
             Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            buttonUser_Click(this, new EventArgs());
+        }
+
+        private void labelHome_Click(object sender, EventArgs e)
+        {
+            //trở về màn hình chính
+            frmMain frmMain = new frmMain();
+            frmMain.Show();
+            Hide();
+        }
+
+        private void logo_Click(object sender, EventArgs e)
+        {
+            labelHome_Click(this, new EventArgs());
         }
     }
 }

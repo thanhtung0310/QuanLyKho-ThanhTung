@@ -79,5 +79,10 @@ namespace QuanLyKho_TT.Views
                 form.Show();
             }
         }
+
+        private void logo_Click(object sender, EventArgs e)
+        {
+            labelHome_Click(this, new EventArgs());
+        }
     }
 }

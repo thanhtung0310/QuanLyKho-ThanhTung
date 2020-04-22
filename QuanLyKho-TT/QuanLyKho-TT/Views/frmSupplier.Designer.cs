@@ -34,6 +34,8 @@
             this.labelHello = new System.Windows.Forms.Label();
             this.tbNameA = new System.Windows.Forms.TextBox();
             this.gBoxDelete = new System.Windows.Forms.GroupBox();
+            this.dateB = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
             this.tbInfoB = new System.Windows.Forms.TextBox();
             this.tbEmailB = new System.Windows.Forms.TextBox();
             this.tbPhoneB = new System.Windows.Forms.TextBox();
@@ -59,6 +61,7 @@
             this.NgayCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LuongCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gboxAdd = new System.Windows.Forms.GroupBox();
+            this.dateA = new System.Windows.Forms.DateTimePicker();
             this.tbInfoA = new System.Windows.Forms.TextBox();
             this.tbEmailA = new System.Windows.Forms.TextBox();
             this.tbPhoneA = new System.Windows.Forms.TextBox();
@@ -67,9 +70,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateA = new System.Windows.Forms.DateTimePicker();
-            this.dateB = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.gBoxDelete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
@@ -96,6 +96,7 @@
             this.logo.Size = new System.Drawing.Size(174, 47);
             this.logo.TabIndex = 50;
             this.logo.TabStop = false;
+            this.logo.Click += new System.EventHandler(this.logo_Click);
             // 
             // labelHello
             // 
@@ -143,6 +144,25 @@
             this.gBoxDelete.Size = new System.Drawing.Size(656, 519);
             this.gBoxDelete.TabIndex = 47;
             this.gBoxDelete.TabStop = false;
+            // 
+            // dateB
+            // 
+            this.dateB.Font = new System.Drawing.Font("Cambria", 14F);
+            this.dateB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateB.Location = new System.Drawing.Point(282, 409);
+            this.dateB.Name = "dateB";
+            this.dateB.Size = new System.Drawing.Size(329, 35);
+            this.dateB.TabIndex = 13;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(31, 409);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(191, 32);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "Ngày khởi tạo:";
             // 
             // tbInfoB
             // 
@@ -428,6 +448,15 @@
             this.gboxAdd.TabIndex = 44;
             this.gboxAdd.TabStop = false;
             // 
+            // dateA
+            // 
+            this.dateA.Font = new System.Drawing.Font("Cambria", 14F);
+            this.dateA.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateA.Location = new System.Drawing.Point(274, 409);
+            this.dateA.Name = "dateA";
+            this.dateA.Size = new System.Drawing.Size(329, 35);
+            this.dateA.TabIndex = 6;
+            // 
             // tbInfoA
             // 
             this.tbInfoA.Font = new System.Drawing.Font("Cambria", 14F);
@@ -509,34 +538,6 @@
             this.label11.TabIndex = 51;
             this.label11.Text = "Đăng xuất";
             this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // dateA
-            // 
-            this.dateA.Font = new System.Drawing.Font("Cambria", 14F);
-            this.dateA.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateA.Location = new System.Drawing.Point(274, 409);
-            this.dateA.Name = "dateA";
-            this.dateA.Size = new System.Drawing.Size(329, 35);
-            this.dateA.TabIndex = 6;
-            // 
-            // dateB
-            // 
-            this.dateB.Font = new System.Drawing.Font("Cambria", 14F);
-            this.dateB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateB.Location = new System.Drawing.Point(282, 409);
-            this.dateB.Name = "dateB";
-            this.dateB.Size = new System.Drawing.Size(329, 35);
-            this.dateB.TabIndex = 13;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(31, 409);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(191, 32);
-            this.label12.TabIndex = 36;
-            this.label12.Text = "Ngày khởi tạo:";
             // 
             // frmSupplier
             // 

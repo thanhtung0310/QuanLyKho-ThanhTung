@@ -44,31 +44,28 @@
             this.buttonObject = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.buttonExport = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelIn = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelOut = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelStore = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelHello = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DisplayName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
+            this.dgv = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonImport
@@ -155,24 +152,24 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.label4);
+            this.groupControl1.Controls.Add(this.labelIn);
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Location = new System.Drawing.Point(55, 208);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(152, 141);
             this.groupControl1.TabIndex = 2;
-            this.groupControl1.Click += new System.EventHandler(this.groupControl1_Click);
             // 
-            // label4
+            // labelIn
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cambria", 14F);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(36, 80);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 28);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "99998";
+            this.labelIn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelIn.AutoSize = true;
+            this.labelIn.Font = new System.Drawing.Font("Cambria", 14F);
+            this.labelIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelIn.Location = new System.Drawing.Point(45, 80);
+            this.labelIn.Name = "labelIn";
+            this.labelIn.Size = new System.Drawing.Size(77, 28);
+            this.labelIn.TabIndex = 1;
+            this.labelIn.Text = "99998";
             // 
             // label1
             // 
@@ -186,24 +183,25 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.label5);
+            this.groupControl2.Controls.Add(this.labelOut);
             this.groupControl2.Controls.Add(this.label2);
             this.groupControl2.Location = new System.Drawing.Point(244, 208);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(145, 141);
             this.groupControl2.TabIndex = 3;
-            this.groupControl2.Click += new System.EventHandler(this.groupControl2_Click);
             // 
-            // label5
+            // labelOut
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 14F);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label5.Location = new System.Drawing.Point(34, 80);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 28);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "88887";
+            this.labelOut.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelOut.AutoSize = true;
+            this.labelOut.Font = new System.Drawing.Font("Cambria", 14F);
+            this.labelOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelOut.Location = new System.Drawing.Point(41, 80);
+            this.labelOut.Name = "labelOut";
+            this.labelOut.Size = new System.Drawing.Size(77, 28);
+            this.labelOut.TabIndex = 2;
+            this.labelOut.Text = "88887";
+            this.labelOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -217,24 +215,25 @@
             // 
             // groupControl3
             // 
-            this.groupControl3.Controls.Add(this.label6);
+            this.groupControl3.Controls.Add(this.labelStore);
             this.groupControl3.Controls.Add(this.label3);
             this.groupControl3.Location = new System.Drawing.Point(434, 208);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(128, 141);
             this.groupControl3.TabIndex = 4;
-            this.groupControl3.Click += new System.EventHandler(this.groupControl3_Click);
             // 
-            // label6
+            // labelStore
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Cambria", 14F);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(24, 80);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 28);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "77776";
+            this.labelStore.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelStore.AutoSize = true;
+            this.labelStore.Font = new System.Drawing.Font("Cambria", 14F);
+            this.labelStore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelStore.Location = new System.Drawing.Point(35, 80);
+            this.labelStore.Name = "labelStore";
+            this.labelStore.Size = new System.Drawing.Size(77, 28);
+            this.labelStore.TabIndex = 3;
+            this.labelStore.Text = "77776";
+            this.labelStore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -246,14 +245,15 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Tồn kho";
             // 
-            // pictureBox2
+            // logo
             // 
-            this.pictureBox2.Image = global::QuanLyKho_TT.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(174, 47);
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
+            this.logo.Image = global::QuanLyKho_TT.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(12, 12);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(174, 47);
+            this.logo.TabIndex = 21;
+            this.logo.TabStop = false;
+            this.logo.Click += new System.EventHandler(this.logo_Click);
             // 
             // pictureBox1
             // 
@@ -263,6 +263,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(73, 68);
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // labelHello
             // 
@@ -276,48 +277,6 @@
             this.labelHello.Text = "Chào DisplayName,";
             this.labelHello.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DisplayName,
-            this.Unit,
-            this.Price});
-            this.dataGridView1.Location = new System.Drawing.Point(28, 369);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(561, 203);
-            this.dataGridView1.TabIndex = 22;
-            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
-            // 
-            // DisplayName
-            // 
-            this.DisplayName.HeaderText = "Tên vật tư";
-            this.DisplayName.MinimumWidth = 6;
-            this.DisplayName.Name = "DisplayName";
-            this.DisplayName.ReadOnly = true;
-            this.DisplayName.Visible = false;
-            this.DisplayName.Width = 125;
-            // 
-            // Unit
-            // 
-            this.Unit.HeaderText = "Đơn vị đo";
-            this.Unit.MinimumWidth = 6;
-            this.Unit.Name = "Unit";
-            this.Unit.ReadOnly = true;
-            this.Unit.Visible = false;
-            this.Unit.Width = 125;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Giá bán";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Visible = false;
-            this.Price.Width = 125;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -330,14 +289,24 @@
             this.label7.Text = "Đăng xuất";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // dgv
+            // 
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(146, 376);
+            this.dgv.Name = "dgv";
+            this.dgv.RowHeadersWidth = 51;
+            this.dgv.RowTemplate.Height = 24;
+            this.dgv.Size = new System.Drawing.Size(355, 150);
+            this.dgv.TabIndex = 29;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 591);
+            this.ClientSize = new System.Drawing.Size(612, 555);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.logo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelHello);
             this.Controls.Add(this.groupControl3);
@@ -363,9 +332,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,16 +355,13 @@
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label labelIn;
+        private System.Windows.Forms.Label labelOut;
+        private System.Windows.Forms.Label labelStore;
+        private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelHello;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DisplayName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dgv;
     }
 }
