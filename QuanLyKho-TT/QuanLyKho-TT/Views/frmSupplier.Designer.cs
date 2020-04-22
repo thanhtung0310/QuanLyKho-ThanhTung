@@ -44,7 +44,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tbNameB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.labelEdit = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -60,7 +59,6 @@
             this.NgayCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LuongCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gboxAdd = new System.Windows.Forms.GroupBox();
-            this.labelToday = new System.Windows.Forms.Label();
             this.tbInfoA = new System.Windows.Forms.TextBox();
             this.tbEmailA = new System.Windows.Forms.TextBox();
             this.tbPhoneA = new System.Windows.Forms.TextBox();
@@ -69,6 +67,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.dateA = new System.Windows.Forms.DateTimePicker();
+            this.dateB = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.gBoxDelete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
@@ -120,6 +121,8 @@
             // gBoxDelete
             // 
             this.gBoxDelete.BackColor = System.Drawing.Color.White;
+            this.gBoxDelete.Controls.Add(this.dateB);
+            this.gBoxDelete.Controls.Add(this.label12);
             this.gBoxDelete.Controls.Add(this.tbInfoB);
             this.gBoxDelete.Controls.Add(this.tbEmailB);
             this.gBoxDelete.Controls.Add(this.tbPhoneB);
@@ -130,7 +133,6 @@
             this.gBoxDelete.Controls.Add(this.label10);
             this.gBoxDelete.Controls.Add(this.tbNameB);
             this.gBoxDelete.Controls.Add(this.label4);
-            this.gBoxDelete.Controls.Add(this.buttonSearch);
             this.gBoxDelete.Controls.Add(this.buttonEdit);
             this.gBoxDelete.Controls.Add(this.labelEdit);
             this.gBoxDelete.Controls.Add(this.buttonDelete);
@@ -138,7 +140,7 @@
             this.gBoxDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gBoxDelete.Name = "gBoxDelete";
             this.gBoxDelete.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gBoxDelete.Size = new System.Drawing.Size(694, 484);
+            this.gBoxDelete.Size = new System.Drawing.Size(656, 519);
             this.gBoxDelete.TabIndex = 47;
             this.gBoxDelete.TabStop = false;
             // 
@@ -150,7 +152,7 @@
             this.tbInfoB.Multiline = true;
             this.tbInfoB.Name = "tbInfoB";
             this.tbInfoB.Size = new System.Drawing.Size(329, 73);
-            this.tbInfoB.TabIndex = 13;
+            this.tbInfoB.TabIndex = 12;
             // 
             // tbEmailB
             // 
@@ -160,7 +162,7 @@
             this.tbEmailB.Multiline = true;
             this.tbEmailB.Name = "tbEmailB";
             this.tbEmailB.Size = new System.Drawing.Size(329, 36);
-            this.tbEmailB.TabIndex = 12;
+            this.tbEmailB.TabIndex = 11;
             // 
             // tbPhoneB
             // 
@@ -170,7 +172,7 @@
             this.tbPhoneB.Multiline = true;
             this.tbPhoneB.Name = "tbPhoneB";
             this.tbPhoneB.Size = new System.Drawing.Size(329, 36);
-            this.tbPhoneB.TabIndex = 11;
+            this.tbPhoneB.TabIndex = 10;
             // 
             // tbAddressB
             // 
@@ -180,7 +182,7 @@
             this.tbAddressB.Multiline = true;
             this.tbAddressB.Name = "tbAddressB";
             this.tbAddressB.Size = new System.Drawing.Size(329, 73);
-            this.tbAddressB.TabIndex = 10;
+            this.tbAddressB.TabIndex = 9;
             // 
             // label2
             // 
@@ -231,6 +233,8 @@
             this.tbNameB.Name = "tbNameB";
             this.tbNameB.Size = new System.Drawing.Size(329, 36);
             this.tbNameB.TabIndex = 8;
+            this.tbNameB.Click += new System.EventHandler(this.tbNameB_Click);
+            this.tbNameB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbNameB_KeyDown);
             // 
             // label4
             // 
@@ -242,23 +246,12 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "Tên hiển thị: ";
             // 
-            // buttonSearch
-            // 
-            this.buttonSearch.BackColor = System.Drawing.Color.Yellow;
-            this.buttonSearch.Font = new System.Drawing.Font("Cambria", 10F);
-            this.buttonSearch.Location = new System.Drawing.Point(621, 82);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(57, 29);
-            this.buttonSearch.TabIndex = 9;
-            this.buttonSearch.Text = "Tìm";
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            // 
             // buttonEdit
             // 
             this.buttonEdit.BackColor = System.Drawing.Color.ForestGreen;
             this.buttonEdit.Font = new System.Drawing.Font("Cambria", 18F);
             this.buttonEdit.ForeColor = System.Drawing.Color.White;
-            this.buttonEdit.Location = new System.Drawing.Point(127, 419);
+            this.buttonEdit.Location = new System.Drawing.Point(129, 454);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(174, 48);
@@ -270,7 +263,7 @@
             // 
             this.labelEdit.AutoSize = true;
             this.labelEdit.Font = new System.Drawing.Font("Cambria", 20F, System.Drawing.FontStyle.Bold);
-            this.labelEdit.Location = new System.Drawing.Point(72, 20);
+            this.labelEdit.Location = new System.Drawing.Point(50, 20);
             this.labelEdit.Name = "labelEdit";
             this.labelEdit.Size = new System.Drawing.Size(552, 40);
             this.labelEdit.TabIndex = 21;
@@ -282,7 +275,7 @@
             this.buttonDelete.BackColor = System.Drawing.Color.DarkRed;
             this.buttonDelete.Font = new System.Drawing.Font("Cambria", 18F);
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(415, 419);
+            this.buttonDelete.Location = new System.Drawing.Point(387, 454);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(174, 48);
@@ -413,7 +406,7 @@
             // gboxAdd
             // 
             this.gboxAdd.BackColor = System.Drawing.Color.White;
-            this.gboxAdd.Controls.Add(this.labelToday);
+            this.gboxAdd.Controls.Add(this.dateA);
             this.gboxAdd.Controls.Add(this.tbInfoA);
             this.gboxAdd.Controls.Add(this.tbEmailA);
             this.gboxAdd.Controls.Add(this.tbPhoneA);
@@ -434,16 +427,6 @@
             this.gboxAdd.Size = new System.Drawing.Size(634, 519);
             this.gboxAdd.TabIndex = 44;
             this.gboxAdd.TabStop = false;
-            // 
-            // labelToday
-            // 
-            this.labelToday.AutoSize = true;
-            this.labelToday.Font = new System.Drawing.Font("Cambria", 16F);
-            this.labelToday.Location = new System.Drawing.Point(268, 409);
-            this.labelToday.Name = "labelToday";
-            this.labelToday.Size = new System.Drawing.Size(84, 32);
-            this.labelToday.TabIndex = 6;
-            this.labelToday.Text = "Today";
             // 
             // tbInfoA
             // 
@@ -527,6 +510,34 @@
             this.label11.Text = "Đăng xuất";
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
+            // dateA
+            // 
+            this.dateA.Font = new System.Drawing.Font("Cambria", 14F);
+            this.dateA.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateA.Location = new System.Drawing.Point(274, 409);
+            this.dateA.Name = "dateA";
+            this.dateA.Size = new System.Drawing.Size(329, 35);
+            this.dateA.TabIndex = 6;
+            // 
+            // dateB
+            // 
+            this.dateB.Font = new System.Drawing.Font("Cambria", 14F);
+            this.dateB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateB.Location = new System.Drawing.Point(282, 409);
+            this.dateB.Name = "dateB";
+            this.dateB.Size = new System.Drawing.Size(329, 35);
+            this.dateB.TabIndex = 13;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(31, 409);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(191, 32);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "Ngày khởi tạo:";
+            // 
             // frmSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -566,7 +577,6 @@
         private System.Windows.Forms.GroupBox gBoxDelete;
         private System.Windows.Forms.TextBox tbNameB;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Label labelEdit;
         private System.Windows.Forms.Button buttonDelete;
@@ -589,7 +599,6 @@
         private System.Windows.Forms.TextBox tbEmailA;
         private System.Windows.Forms.TextBox tbPhoneA;
         private System.Windows.Forms.TextBox tbAddressA;
-        private System.Windows.Forms.Label labelToday;
         private System.Windows.Forms.TextBox tbInfoB;
         private System.Windows.Forms.TextBox tbEmailB;
         private System.Windows.Forms.TextBox tbPhoneB;
@@ -599,5 +608,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dateB;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dateA;
     }
 }

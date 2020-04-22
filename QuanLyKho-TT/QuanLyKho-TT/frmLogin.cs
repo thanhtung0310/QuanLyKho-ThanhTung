@@ -75,5 +75,13 @@ namespace QuanLyKho_TT
                 txbPassword.UseSystemPasswordChar = true;
             }
         }
+
+        private void txbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonLogIn_Click(this, new EventArgs());
+            }
+        }
     }
 }

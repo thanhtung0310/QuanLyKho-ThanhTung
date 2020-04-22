@@ -55,7 +55,7 @@ namespace QuanLyKho_TT.Views
         private void labelHome_Click(object sender, EventArgs e)
         {
             //trở về màn hình chính
-            frmMain frmMain= new frmMain();
+            frmMain frmMain = new frmMain();
             frmMain.Show();
             Hide();
         }

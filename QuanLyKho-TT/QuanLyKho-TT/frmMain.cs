@@ -13,10 +13,53 @@ namespace QuanLyKho_TT
 {
     public partial class frmMain : DevExpress.XtraEditors.XtraForm
     {
-        //Cho phép Admin, Nhân viên, Khách hàng
+        DataTable nhap = new DataTable();
+        DataTable xuat = new DataTable();
         public frmMain()
         {
             InitializeComponent();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            //MessageBox.Show("Chào mừng đến với phần mềm QUẢN LÝ KHO HÀNG", "Thông báo.");
+
+            //cập nhật tên người dùng
+            labelHello.Text = "Chào " + frmLogin.tendangnhap + ", ";
+
+            //cập nhật số lượng hàng nhập, hàng xuất, hàng tồn kho
+            
+        }
+
+        private void groupControl1_Click(object sender, EventArgs e)
+        {
+            //cập nhật số lượng hàng nhập
+        }
+
+        private void groupControl2_Click(object sender, EventArgs e)
+        {
+            //cập nhật số lượng hàng xuất
+        }
+
+        private void groupControl3_Click(object sender, EventArgs e)
+        {
+            //cập nhật số lượng hàng tồn
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+            //cập nhật thông tin vật tư
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Xác nhận đăng xuất ?", "Thông báo.", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Hide();
+                frmLogin form = new frmLogin();
+                form.Show();
+            }
         }
 
         private void buttonImport_Click(object sender, EventArgs e)
@@ -66,47 +109,6 @@ namespace QuanLyKho_TT
             Views.frmUser frmUser = new Views.frmUser();
             frmUser.Show();
             Hide();
-        }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            //MessageBox.Show("Chào mừng đến với phần mềm QUẢN LÝ KHO HÀNG", "Thông báo.");
-
-            //cập nhật tên người dùng
-            labelHello.Text = "Chào " + frmLogin.tendangnhap + ", ";
-
-            //cập nhật số lượng hàng nhập, hàng xuất, hàng tồn kho
-        }
-
-        private void groupControl1_Click(object sender, EventArgs e)
-        {
-            //cập nhật số lượng hàng nhập
-        }
-
-        private void groupControl2_Click(object sender, EventArgs e)
-        {
-            //cập nhật số lượng hàng xuất
-        }
-
-        private void groupControl3_Click(object sender, EventArgs e)
-        {
-            //cập nhật số lượng hàng tồn
-        }
-
-        private void dataGridView1_Click(object sender, EventArgs e)
-        {
-            //cập nhật thông tin vật tư
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-            DialogResult dialog = MessageBox.Show("Xác nhận đăng xuất ?", "Thông báo.", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
-            {
-                Hide();
-                frmLogin form = new frmLogin();
-                form.Show();
-            }
         }
     }
 }

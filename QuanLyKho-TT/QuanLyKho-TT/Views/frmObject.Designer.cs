@@ -41,10 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.LuongCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv = new System.Windows.Forms.DataGridView();
-            this.MaLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelID = new System.Windows.Forms.Label();
             this.labelAdd = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,11 +55,18 @@
             this.avatar = new System.Windows.Forms.PictureBox();
             this.labelHome = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.dgv = new System.Windows.Forms.DataGridView();
+            this.dgv2 = new System.Windows.Forms.DataGridView();
             this.gBoxDelete.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.gboxAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSearch
@@ -204,59 +207,11 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(560, 407);
+            this.label13.Location = new System.Drawing.Point(886, 407);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(227, 32);
             this.label13.TabIndex = 37;
             this.label13.Text = "Danh sách vật tư:";
-            // 
-            // LuongCB
-            // 
-            this.LuongCB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.LuongCB.HeaderText = "LuongCB";
-            this.LuongCB.MinimumWidth = 6;
-            this.LuongCB.Name = "LuongCB";
-            this.LuongCB.ReadOnly = true;
-            this.LuongCB.Visible = false;
-            this.LuongCB.Width = 125;
-            // 
-            // NgayCong
-            // 
-            this.NgayCong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.NgayCong.HeaderText = "NgayCong";
-            this.NgayCong.MinimumWidth = 25;
-            this.NgayCong.Name = "NgayCong";
-            this.NgayCong.ReadOnly = true;
-            this.NgayCong.Visible = false;
-            this.NgayCong.Width = 125;
-            // 
-            // dgv
-            // 
-            this.dgv.AllowUserToAddRows = false;
-            this.dgv.AllowUserToDeleteRows = false;
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaLuong,
-            this.NgayCong,
-            this.LuongCB});
-            this.dgv.Location = new System.Drawing.Point(330, 442);
-            this.dgv.Name = "dgv";
-            this.dgv.ReadOnly = true;
-            this.dgv.RowHeadersWidth = 51;
-            this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(725, 154);
-            this.dgv.TabIndex = 11;
-            this.dgv.Click += new System.EventHandler(this.dataGridViewObject_Click);
-            // 
-            // MaLuong
-            // 
-            this.MaLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.MaLuong.HeaderText = "MaLuong";
-            this.MaLuong.MinimumWidth = 25;
-            this.MaLuong.Name = "MaLuong";
-            this.MaLuong.ReadOnly = true;
-            this.MaLuong.Visible = false;
-            this.MaLuong.Width = 125;
             // 
             // labelID
             // 
@@ -345,6 +300,8 @@
             // 
             // cbbUnitA
             // 
+            this.cbbUnitA.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbbUnitA.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbUnitA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbUnitA.Font = new System.Drawing.Font("Cambria", 14F);
             this.cbbUnitA.FormattingEnabled = true;
@@ -416,11 +373,64 @@
             this.label7.Text = "Đăng xuất";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(335, 407);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(315, 32);
+            this.label5.TabIndex = 44;
+            this.label5.Text = "Danh sách nhà cung cấp:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(45, 407);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(270, 32);
+            this.label8.TabIndex = 45;
+            this.label8.Text = "Danh sách đơn vị đo:";
+            // 
+            // dgv1
+            // 
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Location = new System.Drawing.Point(51, 455);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.RowHeadersWidth = 51;
+            this.dgv1.RowTemplate.Height = 24;
+            this.dgv1.Size = new System.Drawing.Size(264, 143);
+            this.dgv1.TabIndex = 46;
+            // 
+            // dgv
+            // 
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(777, 455);
+            this.dgv.Name = "dgv";
+            this.dgv.RowHeadersWidth = 51;
+            this.dgv.Size = new System.Drawing.Size(464, 143);
+            this.dgv.TabIndex = 47;
+            // 
+            // dgv2
+            // 
+            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv2.Location = new System.Drawing.Point(341, 455);
+            this.dgv2.Name = "dgv2";
+            this.dgv2.RowHeadersWidth = 51;
+            this.dgv2.Size = new System.Drawing.Size(302, 143);
+            this.dgv2.TabIndex = 48;
+            // 
             // frmObject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1392, 625);
+            this.Controls.Add(this.dgv2);
+            this.Controls.Add(this.dgv);
+            this.Controls.Add(this.dgv1);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelHome);
             this.Controls.Add(this.logo);
@@ -428,7 +438,6 @@
             this.Controls.Add(this.labelHello);
             this.Controls.Add(this.gBoxDelete);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.dgv);
             this.Controls.Add(this.gboxAdd);
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmObject.IconOptions.LargeImage")));
             this.Name = "frmObject";
@@ -436,11 +445,13 @@
             this.Load += new System.EventHandler(this.frmObject_Load);
             this.gBoxDelete.ResumeLayout(false);
             this.gBoxDelete.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.gboxAdd.ResumeLayout(false);
             this.gboxAdd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,10 +465,6 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.GroupBox gBoxDelete;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LuongCB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayCong;
-        private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLuong;
         private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.Label labelAdd;
         private System.Windows.Forms.Label label1;
@@ -478,5 +485,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelHome;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dgv1;
+        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.DataGridView dgv2;
     }
 }

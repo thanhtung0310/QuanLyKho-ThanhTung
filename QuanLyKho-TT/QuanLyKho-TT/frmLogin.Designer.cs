@@ -111,6 +111,7 @@
             this.txbPassword.TabIndex = 1;
             this.txbPassword.Text = "Mật khẩu";
             this.txbPassword.UseSystemPasswordChar = true;
+            this.txbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbPassword_KeyDown);
             // 
             // txbUsername
             // 
