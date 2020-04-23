@@ -561,6 +561,7 @@
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmCustomer.IconOptions.LargeImage")));
             this.Name = "frmCustomer";
             this.Text = "Người dùng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustomer_FormClosing);
             this.Load += new System.EventHandler(this.frmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();

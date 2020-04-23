@@ -78,5 +78,23 @@ namespace QuanLyKho_TT.Views
         {
             labelHome_Click(this, new EventArgs());
         }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmExport_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Xác nhận thoát khỏi phần mềm?", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start("cmd.exe", "/c taskkill /F /IM QuanLyKho-TT.exe");
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

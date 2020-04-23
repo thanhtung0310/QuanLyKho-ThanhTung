@@ -443,6 +443,7 @@
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmObject.IconOptions.LargeImage")));
             this.Name = "frmObject";
             this.Text = "Vật tư";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmObject_FormClosing);
             this.Load += new System.EventHandler(this.frmObject_Load);
             this.gBoxDelete.ResumeLayout(false);
             this.gBoxDelete.PerformLayout();

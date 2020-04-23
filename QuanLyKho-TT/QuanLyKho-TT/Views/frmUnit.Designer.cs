@@ -264,6 +264,7 @@
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmUnit.IconOptions.LargeImage")));
             this.Name = "frmUnit";
             this.Text = "Đơn vị đo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmUnit_FormClosing);
             this.Load += new System.EventHandler(this.frmUnit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();

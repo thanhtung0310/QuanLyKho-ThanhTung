@@ -49,6 +49,8 @@
             this.numberA = new System.Windows.Forms.NumericUpDown();
             this.dateA = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbStatus = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.numberB = new System.Windows.Forms.NumericUpDown();
             this.cbbObjB = new System.Windows.Forms.ComboBox();
             this.tbIDB = new System.Windows.Forms.TextBox();
@@ -158,6 +160,7 @@
             this.tbInpPriceA.Name = "tbInpPriceA";
             this.tbInpPriceA.Size = new System.Drawing.Size(329, 36);
             this.tbInpPriceA.TabIndex = 4;
+            this.tbInpPriceA.Text = "0";
             // 
             // label1
             // 
@@ -178,6 +181,7 @@
             this.tbOutPriceA.Name = "tbOutPriceA";
             this.tbOutPriceA.Size = new System.Drawing.Size(329, 36);
             this.tbOutPriceA.TabIndex = 5;
+            this.tbOutPriceA.Text = "0";
             // 
             // label3
             // 
@@ -252,6 +256,7 @@
             this.tbIDA.Name = "tbIDA";
             this.tbIDA.Size = new System.Drawing.Size(65, 27);
             this.tbIDA.TabIndex = 1;
+            this.tbIDA.Text = "0";
             // 
             // label14
             // 
@@ -292,6 +297,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tbStatus);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.numberB);
             this.groupBox2.Controls.Add(this.cbbObjB);
             this.groupBox2.Controls.Add(this.tbIDB);
@@ -307,9 +314,29 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Location = new System.Drawing.Point(641, 96);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(596, 353);
+            this.groupBox2.Size = new System.Drawing.Size(596, 422);
             this.groupBox2.TabIndex = 49;
             this.groupBox2.TabStop = false;
+            // 
+            // tbStatus
+            // 
+            this.tbStatus.Font = new System.Drawing.Font("Cambria", 14F);
+            this.tbStatus.Location = new System.Drawing.Point(244, 284);
+            this.tbStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbStatus.Multiline = true;
+            this.tbStatus.Name = "tbStatus";
+            this.tbStatus.Size = new System.Drawing.Size(329, 36);
+            this.tbStatus.TabIndex = 56;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(21, 288);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(159, 32);
+            this.label4.TabIndex = 57;
+            this.label4.Text = "Tình trạng: ";
             // 
             // numberB
             // 
@@ -347,6 +374,7 @@
             this.tbIDB.Name = "tbIDB";
             this.tbIDB.Size = new System.Drawing.Size(65, 27);
             this.tbIDB.TabIndex = 8;
+            this.tbIDB.Text = "0";
             // 
             // label15
             // 
@@ -363,7 +391,7 @@
             this.buttonEdit.BackColor = System.Drawing.Color.ForestGreen;
             this.buttonEdit.Font = new System.Drawing.Font("Cambria", 18F);
             this.buttonEdit.ForeColor = System.Drawing.Color.White;
-            this.buttonEdit.Location = new System.Drawing.Point(69, 288);
+            this.buttonEdit.Location = new System.Drawing.Point(69, 356);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(174, 48);
@@ -377,7 +405,7 @@
             this.buttonDelete.BackColor = System.Drawing.Color.DarkRed;
             this.buttonDelete.Font = new System.Drawing.Font("Cambria", 18F);
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(361, 288);
+            this.buttonDelete.Location = new System.Drawing.Point(361, 356);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(174, 48);
@@ -406,12 +434,13 @@
             this.tbOutPriceB.Name = "tbOutPriceB";
             this.tbOutPriceB.Size = new System.Drawing.Size(329, 36);
             this.tbOutPriceB.TabIndex = 12;
+            this.tbOutPriceB.Text = "0";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(21, 236);
+            this.label8.Location = new System.Drawing.Point(21, 242);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(120, 32);
             this.label8.TabIndex = 44;
@@ -426,12 +455,13 @@
             this.tbInpPriceB.Name = "tbInpPriceB";
             this.tbInpPriceB.Size = new System.Drawing.Size(329, 36);
             this.tbInpPriceB.TabIndex = 11;
+            this.tbInpPriceB.Text = "0";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(21, 182);
+            this.label9.Location = new System.Drawing.Point(21, 184);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(136, 32);
             this.label9.TabIndex = 42;
@@ -472,12 +502,12 @@
             this.dgv.AllowUserToAddRows = false;
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(489, 564);
+            this.dgv.Location = new System.Drawing.Point(463, 564);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(725, 154);
+            this.dgv.Size = new System.Drawing.Size(774, 154);
             this.dgv.TabIndex = 17;
             // 
             // label12
@@ -496,7 +526,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(144, 529);
+            this.label16.Location = new System.Drawing.Point(119, 529);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(227, 32);
             this.label16.TabIndex = 53;
@@ -505,7 +535,7 @@
             // dgv1
             // 
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(100, 564);
+            this.dgv1.Location = new System.Drawing.Point(75, 564);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowHeadersWidth = 51;
             this.dgv1.RowTemplate.Height = 24;
@@ -531,6 +561,7 @@
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("frmImport.IconOptions.SvgImage")));
             this.Name = "frmImport";
             this.Text = "Nhập hàng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmImport_FormClosing);
             this.Load += new System.EventHandler(this.frmImport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
@@ -587,5 +618,7 @@
         private System.Windows.Forms.TextBox tbIDB;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.NumericUpDown numberB;
+        private System.Windows.Forms.TextBox tbStatus;
+        private System.Windows.Forms.Label label4;
     }
 }

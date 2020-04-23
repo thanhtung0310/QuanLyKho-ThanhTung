@@ -246,6 +246,7 @@
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmUser.IconOptions.LargeImage")));
             this.Name = "frmUser";
             this.Text = "Người dùng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmUser_FormClosing);
             this.Load += new System.EventHandler(this.frmUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();

@@ -556,6 +556,7 @@
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmSupplier.IconOptions.LargeImage")));
             this.Name = "frmSupplier";
             this.Text = "Nhà cung cấp";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSupplier_FormClosing);
             this.Load += new System.EventHandler(this.frmSupplier_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.gBoxDelete.ResumeLayout(false);

@@ -38,7 +38,7 @@ namespace QuanLyKho_TT
             //load tất cả thông tin có trong form 
             SqlDataAdapter da = new SqlDataAdapter("select DisplayName, SUM(input.Count) LuongNhap, SUM(output.Count) LuongXuat " +
                 "from INPUTINFO input, OUTPUTINFO output, OBJECT obj " +
-                "where input.IdObject = obj.Id and output.IdObject = input.IdObject " +
+                "where input.IdObject = obj.Id and output.IdInputInfo = input.Id " +
                 "group by DisplayName", AccessDataBase.connection);
             DataTable dt = new DataTable();
 
@@ -134,6 +134,19 @@ namespace QuanLyKho_TT
         private void logo_Click(object sender, EventArgs e)
         {
             labelHome_Click(this, new EventArgs());
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Xác nhận thoát khỏi phần mềm?", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start("cmd.exe", "/c taskkill /F /IM QuanLyKho-TT.exe");
+            }   
+            else
+            {
+                e.Cancel = true;
+            }                    
         }
     }
 }

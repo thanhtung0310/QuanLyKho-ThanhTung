@@ -134,6 +134,7 @@
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmSignUp.IconOptions.LargeImage")));
             this.Name = "frmSignUp";
             this.Text = "Đăng ký";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSignUp_FormClosing);
             this.groupBoxLogin.ResumeLayout(false);
             this.groupBoxLogin.PerformLayout();
             this.ResumeLayout(false);
