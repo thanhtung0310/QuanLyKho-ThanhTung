@@ -8,12 +8,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.Data.Async;
+using QuanLyKho_TT.Model;
+using DevExpress.XtraSplashScreen;
+using System.Data.SqlClient;
 
 namespace QuanLyKho_TT.Views
 {
     public partial class frmSupplier : DevExpress.XtraEditors.XtraForm
     {
-        //Cho phép Admin
+        AccessDataBase nhacungcap = new AccessDataBase();
+        DataTable dtSup = new DataTable();
+
+        AccessDataBase khachhang = new AccessDataBase();
+        DataTable dtCus = new DataTable();
+
         public frmSupplier()
         {
             InitializeComponent();
@@ -23,6 +32,86 @@ namespace QuanLyKho_TT.Views
         {
             //cập nhật tên người dùng
             labelHello.Text = "Chào " + frmLogin.tendangnhap + ", ";
+
+            //load danh sách nhà cung cấp có trong CSDL
+            loadData();
+        }
+
+        private void buttonA_Click(object sender, EventArgs e)
+        {
+            //thêm mới nhà cung cấp
+            if (tbNameA.Text == "" & tbAddressA.Text == "" & tbPhoneA.Text == "" & tbEmailA.Text == "" & tbInfoA.Text == "" & dateA.Value == null)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại các thông tin nhập.", "Thông báo.");
+            }
+            else
+            {
+                SqlCommand add = new SqlCommand("insert into Supplier values ('" + tbNameA.Text + "','" + tbAddressA.Text + "','" +
+                    tbPhoneA.Text + "','" + tbEmailA.Text + "','" + tbInfoA.Text + "','" + dateA.Value.ToString() + "')");
+                khachhang.executeQuery(add);
+                MessageBox.Show("Thêm mới thành công.", "Thông báo.");
+            }
+            loadData();
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            //chỉnh sửa các thông tin nhà cung cấp
+            if (tbNameB.Text == "" & tbAddressB.Text == "" & tbPhoneB.Text == "" & tbEmailB.Text == "" & tbInfoB.Text == "" & dateB.Value == null)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại các thông tin chỉnh sửa.", "Thông báo.");
+            }
+            else
+            {
+                SqlCommand edit = new SqlCommand("update Supplier set Address = '" + tbAddressB.Text
+                    + "', ContactNum = '" + tbPhoneB.Text + "', Email = '" + tbEmailB.Text + "', AddInfo = '" + tbInfoB.Text + "', ContractDate = '" + dateB.Value.ToString()
+                    + "' where DisplayName = '" + tbNameB.Text + "'");
+                khachhang.executeQuery(edit);
+                MessageBox.Show("Chỉnh sửa thành công.", "Thông báo.");
+            }
+            loadData();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            //xóa thông tin nhà cung cấp
+            if (tbNameB.Text == "" & tbAddressB.Text == "" & tbPhoneB.Text == "" & tbEmailB.Text == "" & tbInfoB.Text == "" & dateB.Value == null)
+            {
+
+            }
+            else
+            {
+                SqlCommand delete = new SqlCommand("delete from Supplier where DisplayName = '" + tbNameB.Text + "'");
+                khachhang.executeQuery(delete);
+                MessageBox.Show("Xóa thành công.", "Thông báo.");
+            }
+            clearData();
+            loadData();
+        }
+
+        private void loadData()
+        {
+            //Lấy danh sách thông tin nhà cung cấp vào bảng
+            SqlDataAdapter da = new SqlDataAdapter("select * from Supplier", AccessDataBase.connection);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+            dgv.DataSource = dt;
+        }
+
+        private void clearData()
+        {
+            tbNameB.Clear();
+            tbAddressB.Clear();
+            tbPhoneB.Clear();
+            tbEmailB.Clear();
+            tbInfoB.Clear();
+        }
+
+        private void dataGridViewSupplier_Click(object sender, EventArgs e)
+        {
+            //cập nhật thông tin nhà cung cấp
+            loadData();
         }
 
         private void labelHome_Click(object sender, EventArgs e)
@@ -31,6 +120,27 @@ namespace QuanLyKho_TT.Views
             frmMain frmMain = new frmMain();
             frmMain.Show();
             Hide();
+        }
+
+        private void dataGridViewSupplier_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            /*int i = dgv.CurrentRow.Index;
+
+            tbNameB.Text = dgv.Rows[i].Cells[0].Value.ToString();
+            tbAddressB.Text = dgv.Rows[i].Cells[1].Value.ToString();
+            tbPhoneB.Text = dgv.Rows[i].Cells[2].Value.ToString();
+            tbEmailB.Text = dgv.Rows[i].Cells[3].Value.ToString();
+            tbInfoB.Text = dgv.Rows[i].Cells[4].Value.ToString();*/
+        }
+
+        private void dataGridViewSupplier_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            /*String value = e.Value as string;
+            if ((value != null) && value.Equals(e.CellStyle.DataSourceNullValue))
+            {
+                e.Value = e.CellStyle.NullValue;
+                e.FormattingApplied = true;
+            }*/
         }
 
         private void label11_Click(object sender, EventArgs e)
@@ -44,34 +154,40 @@ namespace QuanLyKho_TT.Views
             }
         }
 
+        public void search()
+        {
+            string search = "select * from Supplier where DisplayName = '" + tbNameB.Text + "'";
+            khachhang.readDatathroughAdapter(search, dtSup);
+            if (dtSup.Rows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại tên hiển thị.", "Thông báo.");
+            }
+            else
+            {
+                string date;
+                //lấy thông tin nhân viên từ dtb
+                tbNameB.Text = dtCus.Rows[0]["DisplayName"].ToString();
+                tbAddressB.Text = dtCus.Rows[0]["Address"].ToString();
+                tbPhoneB.Text = dtCus.Rows[0]["ContactNum"].ToString();
+                tbEmailB.Text = dtCus.Rows[0]["Email"].ToString();
+                tbInfoB.Text = dtCus.Rows[0]["AddInfo"].ToString();
+                date = dtCus.Rows[0]["ContractDate"].ToString();
+                dateB.Text = date;
+            }
+        }
+
         private void tbNameB_KeyDown(object sender, KeyEventArgs e)
         {
-            //nhấn nút F12 để tìm kiếm nhanh thông tin
-            //giống frmCustomer
+            //nhấn F12 để tìm kiếm nhanh thông tin
+            if (e.KeyCode == Keys.F12)
+            {
+                search();
+            }
         }
 
         private void tbNameB_Click(object sender, EventArgs e)
         {
-            //hiện thông báo 'nhấn nút f12'
-            //giống frmCustomer
-        }
-
-        private void logo_Click(object sender, EventArgs e)
-        {
-            labelHome_Click(this, new EventArgs());
-        }
-
-        private void frmSupplier_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dialog = MessageBox.Show("Xác nhận thoát khỏi phần mềm?", "Thông báo", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
-            {
-                System.Diagnostics.Process.Start("cmd.exe", "/c taskkill /F /IM QuanLyKho-TT.exe");
-            }
-            else
-            {
-                e.Cancel = true;
-            }
+            MessageBox.Show("Sau khi nhập tên hiển thị vui lòng ấn nut F11 để tự động nhập nốt các thông tin còn lại.", "Thông báo.");
         }
     }
 }
