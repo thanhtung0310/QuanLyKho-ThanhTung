@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Data.SqlClient;
+using QuanLyKho_TT.Model;
 
 namespace QuanLyKho_TT.Views
 {
@@ -30,7 +32,42 @@ namespace QuanLyKho_TT.Views
 
         private void loadData()
         {
-            //load thông tin 2 dgv và 2cbb khách hàng
+            SqlDataAdapter da1 = new SqlDataAdapter("select i1.Id, o.DisplayName, i1.Count, i1.OutputPrice " +
+               "from INPUTINFO i1, OBJECT o where i1.IdObject = o.Id", AccessDataBase.connection);
+            DataTable dtNhap = new DataTable();
+
+            da1.Fill(dtNhap);
+            dgv1.DataSource = dtNhap;
+            cbbIDA.DisplayMember = "Id";
+            cbbIDA.DataSource = dtNhap;
+            //combobox khách hàng
+            SqlDataAdapter da2 = new SqlDataAdapter("select Id, DisplayName from CUSTOMER", AccessDataBase.connection);
+            DataTable dtCus = new DataTable();
+
+            da2.Fill(dtCus);
+            cbbCusA.DisplayMember = "DisplayName";
+            cbbCusA.ValueMember = "Id";
+            cbbCusA.DataSource = dtCus;
+            cbbCusB.DisplayMember = "DisplayName";
+            cbbCusB.ValueMember = "Id";
+            cbbCusB.DataSource = dtCus;
+            //danh sách đơn đã xuất
+            SqlDataAdapter da3 = new SqlDataAdapter("select o2.Id, o.DisplayName, o2.Count, i.OutputPrice, c.DisplayName, o2.Status, o1.OutputDate " +
+                "from OUTPUT o1, OUTPUTINFO o2, OBJECT o, CUSTOMER c, INPUTINFO i " +
+                "where o1.Id = o2.Id and o2.IdCustomer = c.Id and o2.IdInputInfo = i.Id and i.IdObject = o.Id", AccessDataBase.connection);
+            DataTable dtXuat = new DataTable();
+
+            da3.Fill(dtXuat);
+            dgv.DataSource = dtXuat;
+            cbbIDB.DisplayMember = "Id";
+            cbbIDB.DataSource = dtXuat;
+            //cbb mã nhập
+            SqlDataAdapter da4 = new SqlDataAdapter("select * from INPUtINFO", AccessDataBase.connection);
+            DataTable dtMaNhap = new DataTable();
+
+            da4.Fill(dtMaNhap);
+            cbbIDA.DisplayMember = "Id";
+            cbbIDA.DataSource = dtMaNhap;
         }
 
         private void labelHome_Click(object sender, EventArgs e)
@@ -66,6 +103,8 @@ namespace QuanLyKho_TT.Views
             //Nhập số lượng -> OutputInfo
             //chọn khách hàng
             //chọn ngày -> Outputs
+
+
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
