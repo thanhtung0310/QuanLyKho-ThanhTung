@@ -20,7 +20,8 @@ namespace QuanLyKho_TT.Views
         {
             InitializeComponent();
         }
-
+        AccessDataBase xuat = new AccessDataBase();
+        DataTable dtXuat = new DataTable();
         private void frmExport_Load(object sender, EventArgs e)
         {
             //cập nhật tên người dùng
@@ -99,12 +100,29 @@ namespace QuanLyKho_TT.Views
 
         private void buttonA_Click(object sender, EventArgs e)
         {
-            //nhập mã (mã INputInfo)
-            //Nhập số lượng -> OutputInfo
-            //chọn khách hàng
-            //chọn ngày -> Outputs
-
-
+            if (cbbIDA.Text == "0" && numberA.Value.ToString() == "0" && cbbCusA.Text == "")
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại các thông tin nhập.", "Thông báo.");
+            }
+            else
+            {
+                string check = "select * from OUTPUT where Id ='" + tbIDOA.Text + "'";
+                xuat.readDatathroughAdapter(check, dtXuat);
+                if (dtXuat.Rows.Count != 0)
+                {
+                    MessageBox.Show("Vui lòng kiểm tra lại mã xuất.", "Thông báo.");
+                }
+                else
+                {
+                    SqlCommand add1 = new SqlCommand("insert into OUTPUT(Id,OutputDate) values ('" + tbIDOA.Text + "','" + dateA.Value.ToString() + "')");
+                    SqlCommand add2 = new SqlCommand("insert into OUTPUTINFO(Id,IdInputInfo,IdCustomer,Count) values ('" + tbIDOA.Text + "','" + cbbIDA.Text
+                        + "','" + cbbCusA.SelectedValue + "','" + numberA.Value.ToString() + "')");
+                    xuat.executeQuery(add1);
+                    xuat.executeQuery(add2);
+                    MessageBox.Show("Thêm đơn thành công.", "Thông báo.");
+                }
+            }
+            loadData();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
