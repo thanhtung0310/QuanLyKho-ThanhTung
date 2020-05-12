@@ -189,5 +189,23 @@ namespace QuanLyKho_TT.Views
         {
             MessageBox.Show("Sau khi nhập tên hiển thị vui lòng ấn nut F11 để tự động nhập nốt các thông tin còn lại.", "Thông báo.");
         }
+
+        private void logo_Click(object sender, EventArgs e)
+        {
+            labelHome_Click(this, new EventArgs());
+        }
+
+        private void frmSupplier_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Xác nhận thoát khỏi phần mềm?", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start("cmd.exe", "/c taskkill /F /IM QuanLyKho-TT.exe");
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
