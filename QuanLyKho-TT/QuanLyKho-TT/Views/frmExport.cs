@@ -127,8 +127,18 @@ namespace QuanLyKho_TT.Views
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            //nhập mã InputInfo -> lấy thông tin
-            //thay đổi số lượng, khách hàng, thời gian
+            if (cbbIDB.Text == "0" && numberB.Value.ToString() == "0" && cbbCusB.Text == "" && tbStatus.Text == "")
+            {
+                MessageBox.Show("Vui lòng kiêm tra lại thông tin chỉnh sửa.", "Thông báo.");
+            }
+            else
+            {
+                SqlCommand edit = new SqlCommand("update OUTPUTINFO set Count = '" + numberB.Value.ToString() + "', IdCustomer = '" + cbbCusB.SelectedValue +
+                    "', Status = '" + tbStatus.Text + "' where Id = '" + cbbIDB.Text + "'");
+                xuat.executeQuery(edit);
+                MessageBox.Show("Chỉnh sửa thành công.", "Thông báo.");
+            }
+            loadData();
         }
 
         private void logo_Click(object sender, EventArgs e)
