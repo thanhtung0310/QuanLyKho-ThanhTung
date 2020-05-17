@@ -148,7 +148,21 @@ namespace QuanLyKho_TT.Views
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-
+            string check = "select * from OUTPUT o, OUTPUTINFO o1 where o.Id = o1.Id and o.Id = '" + cbbIDB.Text + "'";
+            xuat.readDatathroughAdapter(check, dtXuat);
+            if (dtXuat.Rows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại mã đơn xuất.", "Thông báo.");
+            }
+            else
+            {
+                SqlCommand del1 = new SqlCommand("delete from OUTPUT where Id = '" + cbbIDB.Text + "'");
+                SqlCommand del2 = new SqlCommand("delete from OUTPUTINFO where Id = '" + cbbIDB.Text + "'");
+                xuat.executeQuery(del1);
+                xuat.executeQuery(del2);
+                MessageBox.Show("Xóa đơn xuất thành công.", "Thông báo.");
+            }
+            loadData();
         }
 
         private void frmExport_FormClosing(object sender, FormClosingEventArgs e)
