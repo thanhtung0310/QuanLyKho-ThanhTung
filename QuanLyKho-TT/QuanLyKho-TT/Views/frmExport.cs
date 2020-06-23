@@ -15,13 +15,14 @@ namespace QuanLyKho_TT.Views
 {
     public partial class frmExport : DevExpress.XtraEditors.XtraForm
     {
-        //Cho phép Admin, Nhân viên
+        AccessDataBase xuat = new AccessDataBase();
+        DataTable dtXuat = new DataTable();
+
         public frmExport()
         {
             InitializeComponent();
         }
-        AccessDataBase xuat = new AccessDataBase();
-        DataTable dtXuat = new DataTable();
+
         private void frmExport_Load(object sender, EventArgs e)
         {
             //cập nhật tên người dùng
@@ -29,6 +30,8 @@ namespace QuanLyKho_TT.Views
 
             //load 2 bảng và 2cbb
             loadData();
+
+            MessageBox.Show("Vui lòng nhập đầy đủ thông tin đơn. (mã đơn, giá nhập, giá bán)");
         }
 
         private void loadData()

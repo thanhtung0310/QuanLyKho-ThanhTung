@@ -46,6 +46,8 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.gboxAdd.SuspendLayout();
@@ -227,10 +229,13 @@
             // dgv
             // 
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(543, 343);
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.ten});
+            this.dgv.Location = new System.Drawing.Point(520, 343);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersWidth = 51;
-            this.dgv.Size = new System.Drawing.Size(266, 176);
+            this.dgv.Size = new System.Drawing.Size(301, 176);
             this.dgv.TabIndex = 5;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             this.dgv.Click += new System.EventHandler(this.dgv_Click);
@@ -246,6 +251,22 @@
             this.label7.TabIndex = 53;
             this.label7.Text = "Đăng xuất";
             this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Mã đơn vị đo";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Width = 65;
+            // 
+            // ten
+            // 
+            this.ten.DataPropertyName = "DisplayName";
+            this.ten.HeaderText = "Tên đơn vị đo";
+            this.ten.MinimumWidth = 6;
+            this.ten.Name = "ten";
+            this.ten.Width = 125;
             // 
             // frmUnit
             // 
@@ -297,5 +318,7 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ten;
     }
 }

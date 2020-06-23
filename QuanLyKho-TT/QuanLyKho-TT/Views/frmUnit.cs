@@ -57,7 +57,7 @@ namespace QuanLyKho_TT.Views
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             int dem = 0;
-            SqlCommand query_name = new SqlCommand("select DisplayName from Unit where DisplayName like '" + tbNameA.Text + "'", AccessDataBase.connection);
+            SqlCommand query_name = new SqlCommand("select DisplayName from Unit where DisplayName like N'" + tbNameA.Text + "'", AccessDataBase.connection);
             using (SqlDataReader reader = query_name.ExecuteReader())
             {
                 if (reader.HasRows)

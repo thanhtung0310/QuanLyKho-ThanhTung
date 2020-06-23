@@ -44,17 +44,12 @@
             this.buttonA = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbbObjA = new System.Windows.Forms.ComboBox();
-            this.tbIDA = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.numberA = new System.Windows.Forms.NumericUpDown();
             this.dateA = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbStatus = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.numberB = new System.Windows.Forms.NumericUpDown();
             this.cbbObjB = new System.Windows.Forms.ComboBox();
-            this.tbIDB = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -66,17 +61,31 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.MaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.Ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.num1 = new System.Windows.Forms.NumericUpDown();
+            this.num2 = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
+            this.numberA = new System.Windows.Forms.TextBox();
+            this.numberB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numberA)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numberB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num2)).BeginInit();
             this.SuspendLayout();
             // 
             // logo
@@ -159,7 +168,7 @@
             this.tbInpPriceA.Multiline = true;
             this.tbInpPriceA.Name = "tbInpPriceA";
             this.tbInpPriceA.Size = new System.Drawing.Size(329, 36);
-            this.tbInpPriceA.TabIndex = 4;
+            this.tbInpPriceA.TabIndex = 3;
             this.tbInpPriceA.Text = "0";
             // 
             // label1
@@ -180,7 +189,7 @@
             this.tbOutPriceA.Multiline = true;
             this.tbOutPriceA.Name = "tbOutPriceA";
             this.tbOutPriceA.Size = new System.Drawing.Size(329, 36);
-            this.tbOutPriceA.TabIndex = 5;
+            this.tbOutPriceA.TabIndex = 4;
             this.tbOutPriceA.Text = "0";
             // 
             // label3
@@ -219,10 +228,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbbObjA);
-            this.groupBox1.Controls.Add(this.tbIDA);
-            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.numberA);
+            this.groupBox1.Controls.Add(this.num1);
+            this.groupBox1.Controls.Add(this.cbbObjA);
+            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.dateA);
             this.groupBox1.Controls.Add(this.buttonA);
             this.groupBox1.Controls.Add(this.label7);
@@ -246,45 +255,18 @@
             this.cbbObjA.Location = new System.Drawing.Point(244, 79);
             this.cbbObjA.Name = "cbbObjA";
             this.cbbObjA.Size = new System.Drawing.Size(329, 34);
-            this.cbbObjA.TabIndex = 2;
+            this.cbbObjA.TabIndex = 1;
             this.cbbObjA.Text = "1";
-            // 
-            // tbIDA
-            // 
-            this.tbIDA.Font = new System.Drawing.Font("Cambria", 10F);
-            this.tbIDA.Location = new System.Drawing.Point(504, 31);
-            this.tbIDA.Name = "tbIDA";
-            this.tbIDA.Size = new System.Drawing.Size(65, 27);
-            this.tbIDA.TabIndex = 1;
-            this.tbIDA.Text = "0";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label14.Location = new System.Drawing.Point(431, 38);
+            this.label14.Location = new System.Drawing.Point(444, 38);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(59, 20);
             this.label14.TabIndex = 53;
             this.label14.Text = "Đơn số";
-            // 
-            // numberA
-            // 
-            this.numberA.Font = new System.Drawing.Font("Cambria", 14F);
-            this.numberA.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numberA.Location = new System.Drawing.Point(244, 128);
-            this.numberA.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numberA.Name = "numberA";
-            this.numberA.Size = new System.Drawing.Size(325, 35);
-            this.numberA.TabIndex = 3;
             // 
             // dateA
             // 
@@ -293,16 +275,16 @@
             this.dateA.Location = new System.Drawing.Point(244, 288);
             this.dateA.Name = "dateA";
             this.dateA.Size = new System.Drawing.Size(329, 35);
-            this.dateA.TabIndex = 6;
+            this.dateA.TabIndex = 5;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.numberB);
+            this.groupBox2.Controls.Add(this.num2);
+            this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.tbStatus);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.numberB);
             this.groupBox2.Controls.Add(this.cbbObjB);
-            this.groupBox2.Controls.Add(this.tbIDB);
-            this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.buttonEdit);
             this.groupBox2.Controls.Add(this.buttonDelete);
             this.groupBox2.Controls.Add(this.label5);
@@ -338,24 +320,6 @@
             this.label4.TabIndex = 57;
             this.label4.Text = "Tình trạng: ";
             // 
-            // numberB
-            // 
-            this.numberB.Font = new System.Drawing.Font("Cambria", 14F);
-            this.numberB.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numberB.Location = new System.Drawing.Point(244, 130);
-            this.numberB.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numberB.Name = "numberB";
-            this.numberB.Size = new System.Drawing.Size(329, 35);
-            this.numberB.TabIndex = 10;
-            // 
             // cbbObjB
             // 
             this.cbbObjB.Font = new System.Drawing.Font("Cambria", 13F);
@@ -366,25 +330,6 @@
             this.cbbObjB.TabIndex = 9;
             this.cbbObjB.Text = "1";
             this.cbbObjB.TextChanged += new System.EventHandler(this.cbbObjB_TextChanged);
-            // 
-            // tbIDB
-            // 
-            this.tbIDB.Font = new System.Drawing.Font("Cambria", 10F);
-            this.tbIDB.Location = new System.Drawing.Point(508, 31);
-            this.tbIDB.Name = "tbIDB";
-            this.tbIDB.Size = new System.Drawing.Size(65, 27);
-            this.tbIDB.TabIndex = 8;
-            this.tbIDB.Text = "0";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label15.Location = new System.Drawing.Point(435, 38);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(59, 20);
-            this.label15.TabIndex = 55;
-            this.label15.Text = "Đơn số";
             // 
             // buttonEdit
             // 
@@ -502,6 +447,14 @@
             this.dgv.AllowUserToAddRows = false;
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaDon,
+            this.TenHang,
+            this.SoLuong,
+            this.GiaNhap,
+            this.GiaBan,
+            this.TinhTrang,
+            this.NgayLap});
             this.dgv.Location = new System.Drawing.Point(463, 564);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
@@ -509,6 +462,69 @@
             this.dgv.RowTemplate.Height = 24;
             this.dgv.Size = new System.Drawing.Size(774, 154);
             this.dgv.TabIndex = 17;
+            // 
+            // MaDon
+            // 
+            this.MaDon.DataPropertyName = "Id";
+            this.MaDon.HeaderText = "Mã đơn nhập";
+            this.MaDon.MinimumWidth = 6;
+            this.MaDon.Name = "MaDon";
+            this.MaDon.ReadOnly = true;
+            this.MaDon.Width = 125;
+            // 
+            // TenHang
+            // 
+            this.TenHang.DataPropertyName = "DisplayName";
+            this.TenHang.HeaderText = "Tên vật tư nhập";
+            this.TenHang.MinimumWidth = 6;
+            this.TenHang.Name = "TenHang";
+            this.TenHang.ReadOnly = true;
+            this.TenHang.Width = 125;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "Count";
+            this.SoLuong.HeaderText = "Số lượng nhập";
+            this.SoLuong.MinimumWidth = 6;
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            this.SoLuong.Width = 125;
+            // 
+            // GiaNhap
+            // 
+            this.GiaNhap.DataPropertyName = "InputPrice";
+            this.GiaNhap.HeaderText = "Giá nhập";
+            this.GiaNhap.MinimumWidth = 6;
+            this.GiaNhap.Name = "GiaNhap";
+            this.GiaNhap.ReadOnly = true;
+            this.GiaNhap.Width = 90;
+            // 
+            // GiaBan
+            // 
+            this.GiaBan.DataPropertyName = "OutputPrice";
+            this.GiaBan.HeaderText = "Giá xuất";
+            this.GiaBan.MinimumWidth = 6;
+            this.GiaBan.Name = "GiaBan";
+            this.GiaBan.ReadOnly = true;
+            this.GiaBan.Width = 90;
+            // 
+            // TinhTrang
+            // 
+            this.TinhTrang.DataPropertyName = "Status";
+            this.TinhTrang.HeaderText = "Tình trạng";
+            this.TinhTrang.MinimumWidth = 6;
+            this.TinhTrang.Name = "TinhTrang";
+            this.TinhTrang.ReadOnly = true;
+            this.TinhTrang.Width = 125;
+            // 
+            // NgayLap
+            // 
+            this.NgayLap.DataPropertyName = "InputDate";
+            this.NgayLap.HeaderText = "Ngày lập đơn";
+            this.NgayLap.MinimumWidth = 6;
+            this.NgayLap.Name = "NgayLap";
+            this.NgayLap.ReadOnly = true;
+            this.NgayLap.Width = 125;
             // 
             // label12
             // 
@@ -535,12 +551,77 @@
             // dgv1
             // 
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ma,
+            this.Ten});
             this.dgv1.Location = new System.Drawing.Point(75, 564);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowHeadersWidth = 51;
             this.dgv1.RowTemplate.Height = 24;
             this.dgv1.Size = new System.Drawing.Size(314, 154);
             this.dgv1.TabIndex = 16;
+            // 
+            // Ma
+            // 
+            this.Ma.DataPropertyName = "Id";
+            this.Ma.HeaderText = "Mã vật tư";
+            this.Ma.MinimumWidth = 6;
+            this.Ma.Name = "Ma";
+            this.Ma.Width = 125;
+            // 
+            // Ten
+            // 
+            this.Ten.DataPropertyName = "DisplayName";
+            this.Ten.HeaderText = "Tên vật tư";
+            this.Ten.MinimumWidth = 6;
+            this.Ten.Name = "Ten";
+            this.Ten.Width = 125;
+            // 
+            // num1
+            // 
+            this.num1.Location = new System.Drawing.Point(516, 36);
+            this.num1.Name = "num1";
+            this.num1.Size = new System.Drawing.Size(53, 23);
+            this.num1.TabIndex = 0;
+            // 
+            // num2
+            // 
+            this.num2.Location = new System.Drawing.Point(519, 33);
+            this.num2.Name = "num2";
+            this.num2.Size = new System.Drawing.Size(53, 23);
+            this.num2.TabIndex = 8;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label15.Location = new System.Drawing.Point(447, 35);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(59, 20);
+            this.label15.TabIndex = 58;
+            this.label15.Text = "Đơn số";
+            // 
+            // numberA
+            // 
+            this.numberA.Font = new System.Drawing.Font("Cambria", 14F);
+            this.numberA.Location = new System.Drawing.Point(244, 129);
+            this.numberA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numberA.Multiline = true;
+            this.numberA.Name = "numberA";
+            this.numberA.Size = new System.Drawing.Size(329, 36);
+            this.numberA.TabIndex = 2;
+            this.numberA.Text = "0";
+            // 
+            // numberB
+            // 
+            this.numberB.Font = new System.Drawing.Font("Cambria", 14F);
+            this.numberB.Location = new System.Drawing.Point(244, 129);
+            this.numberB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numberB.Multiline = true;
+            this.numberB.Name = "numberB";
+            this.numberB.Size = new System.Drawing.Size(329, 36);
+            this.numberB.TabIndex = 10;
+            this.numberB.Text = "0";
             // 
             // frmImport
             // 
@@ -567,12 +648,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numberA)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numberB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -608,17 +689,26 @@
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown numberA;
-        private System.Windows.Forms.TextBox tbIDA;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cbbObjA;
         private System.Windows.Forms.ComboBox cbbObjB;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView dgv1;
-        private System.Windows.Forms.TextBox tbIDB;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.NumericUpDown numberB;
         private System.Windows.Forms.TextBox tbStatus;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
+        private System.Windows.Forms.NumericUpDown num1;
+        private System.Windows.Forms.NumericUpDown num2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox numberA;
+        private System.Windows.Forms.TextBox numberB;
     }
 }

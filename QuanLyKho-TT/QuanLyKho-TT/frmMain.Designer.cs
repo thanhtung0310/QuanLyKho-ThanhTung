@@ -57,6 +57,9 @@
             this.labelHello = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -292,12 +295,38 @@
             // dgv
             // 
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
+            this.nhap,
+            this.xuat});
             this.dgv.Location = new System.Drawing.Point(146, 376);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 24;
             this.dgv.Size = new System.Drawing.Size(355, 150);
             this.dgv.TabIndex = 29;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "DisplayName";
+            this.name.HeaderText = "Tên vật tư";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.Width = 90;
+            // 
+            // nhap
+            // 
+            this.nhap.DataPropertyName = "LuongNhap";
+            this.nhap.HeaderText = "Lượng nhập";
+            this.nhap.MinimumWidth = 6;
+            this.nhap.Name = "nhap";
+            // 
+            // xuat
+            // 
+            this.xuat.DataPropertyName = "LuongXuat";
+            this.xuat.HeaderText = "Lượng xuất";
+            this.xuat.MinimumWidth = 6;
+            this.xuat.Name = "xuat";
             // 
             // frmMain
             // 
@@ -364,5 +393,8 @@
         private System.Windows.Forms.Label labelHello;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn xuat;
     }
 }

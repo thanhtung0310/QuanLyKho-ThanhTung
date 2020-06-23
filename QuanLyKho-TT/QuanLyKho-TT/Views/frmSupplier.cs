@@ -20,9 +20,6 @@ namespace QuanLyKho_TT.Views
         AccessDataBase nhacungcap = new AccessDataBase();
         DataTable dtSup = new DataTable();
 
-        AccessDataBase khachhang = new AccessDataBase();
-        DataTable dtCus = new DataTable();
-
         public frmSupplier()
         {
             InitializeComponent();
@@ -48,8 +45,9 @@ namespace QuanLyKho_TT.Views
             {
                 SqlCommand add = new SqlCommand("insert into Supplier values ('" + tbNameA.Text + "','" + tbAddressA.Text + "','" +
                     tbPhoneA.Text + "','" + tbEmailA.Text + "','" + tbInfoA.Text + "','" + dateA.Value.ToString() + "')");
-                khachhang.executeQuery(add);
+                nhacungcap.executeQuery(add);
                 MessageBox.Show("Thêm mới thành công.", "Thông báo.");
+                clearData();
             }
             loadData();
         }
@@ -65,9 +63,10 @@ namespace QuanLyKho_TT.Views
             {
                 SqlCommand edit = new SqlCommand("update Supplier set Address = '" + tbAddressB.Text
                     + "', ContactNum = '" + tbPhoneB.Text + "', Email = '" + tbEmailB.Text + "', AddInfo = '" + tbInfoB.Text + "', ContractDate = '" + dateB.Value.ToString()
-                    + "' where DisplayName = '" + tbNameB.Text + "'");
-                khachhang.executeQuery(edit);
+                    + "' where DisplayName = N'" + tbNameB.Text + "'");
+                nhacungcap.executeQuery(edit);
                 MessageBox.Show("Chỉnh sửa thành công.", "Thông báo.");
+                clearData();
             }
             loadData();
         }
@@ -75,17 +74,17 @@ namespace QuanLyKho_TT.Views
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             //xóa thông tin nhà cung cấp
-            if (tbNameB.Text == "" & tbAddressB.Text == "" & tbPhoneB.Text == "" & tbEmailB.Text == "" & tbInfoB.Text == "" & dateB.Value == null)
+            if (tbNameB.Text != "" & tbAddressB.Text == "" & tbPhoneB.Text == "" & tbEmailB.Text == "" & tbInfoB.Text == "" & dateB.Value == null)
             {
 
             }
             else
-            {
-                SqlCommand delete = new SqlCommand("delete from Supplier where DisplayName = '" + tbNameB.Text + "'");
-                khachhang.executeQuery(delete);
+            {     
+                SqlCommand delete = new SqlCommand("delete from Supplier where DisplayName = N'" + tbNameB.Text + "'");
+                nhacungcap.executeQuery(delete);
                 MessageBox.Show("Xóa thành công.", "Thông báo.");
+                clearData();
             }
-            clearData();
             loadData();
         }
 
@@ -106,6 +105,11 @@ namespace QuanLyKho_TT.Views
             tbPhoneB.Clear();
             tbEmailB.Clear();
             tbInfoB.Clear();
+            tbNameA.Clear();
+            tbAddressA.Clear();
+            tbPhoneA.Clear();
+            tbEmailA.Clear();
+            tbInfoA.Clear();
         }
 
         private void dataGridViewSupplier_Click(object sender, EventArgs e)
@@ -157,7 +161,7 @@ namespace QuanLyKho_TT.Views
         public void search()
         {
             string search = "select * from Supplier where DisplayName = '" + tbNameB.Text + "'";
-            khachhang.readDatathroughAdapter(search, dtSup);
+            nhacungcap.readDatathroughAdapter(search, dtSup);
             if (dtSup.Rows.Count == 0)
             {
                 MessageBox.Show("Vui lòng kiểm tra lại tên hiển thị.", "Thông báo.");
@@ -166,12 +170,11 @@ namespace QuanLyKho_TT.Views
             {
                 string date;
                 //lấy thông tin nhân viên từ dtb
-                tbNameB.Text = dtCus.Rows[0]["DisplayName"].ToString();
-                tbAddressB.Text = dtCus.Rows[0]["Address"].ToString();
-                tbPhoneB.Text = dtCus.Rows[0]["ContactNum"].ToString();
-                tbEmailB.Text = dtCus.Rows[0]["Email"].ToString();
-                tbInfoB.Text = dtCus.Rows[0]["AddInfo"].ToString();
-                date = dtCus.Rows[0]["ContractDate"].ToString();
+                tbAddressB.Text = dtSup.Rows[0]["Address"].ToString();
+                tbPhoneB.Text = dtSup.Rows[0]["ContactNum"].ToString();
+                tbEmailB.Text = dtSup.Rows[0]["Email"].ToString();
+                tbInfoB.Text = dtSup.Rows[0]["AddInfo"].ToString();
+                date = dtSup.Rows[0]["ContractDate"].ToString();
                 dateB.Text = date;
             }
         }
@@ -187,7 +190,9 @@ namespace QuanLyKho_TT.Views
 
         private void tbNameB_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Sau khi nhập tên hiển thị vui lòng ấn nut F11 để tự động nhập nốt các thông tin còn lại.", "Thông báo.");
+            dtSup.Clear();
+            MessageBox.Show("Sau khi nhập tên hiển thị vui lòng ấn nut F12 để tự động nhập nốt các thông tin còn lại.", "Thông báo.");
+            clearData();
         }
 
         private void logo_Click(object sender, EventArgs e)
