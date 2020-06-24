@@ -32,11 +32,15 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
-            this.MaLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.avatar = new System.Windows.Forms.PictureBox();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.NgayCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LuongCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ainfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gboxAdd = new System.Windows.Forms.GroupBox();
             this.dateA = new System.Windows.Forms.DateTimePicker();
             this.tbInfoA = new System.Windows.Forms.TextBox();
@@ -111,16 +115,6 @@
             this.labelID.TabIndex = 22;
             this.labelID.Text = "Địa chỉ:";
             // 
-            // MaLuong
-            // 
-            this.MaLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.MaLuong.HeaderText = "MaLuong";
-            this.MaLuong.MinimumWidth = 25;
-            this.MaLuong.Name = "MaLuong";
-            this.MaLuong.ReadOnly = true;
-            this.MaLuong.Visible = false;
-            this.MaLuong.Width = 125;
-            // 
             // avatar
             // 
             this.avatar.Image = global::QuanLyKho_TT.Properties.Resources.avatar;
@@ -129,6 +123,7 @@
             this.avatar.Size = new System.Drawing.Size(73, 68);
             this.avatar.TabIndex = 57;
             this.avatar.TabStop = false;
+            this.avatar.Click += new System.EventHandler(this.avatar_Click);
             // 
             // dgv
             // 
@@ -136,9 +131,13 @@
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaLuong,
-            this.NgayCong,
-            this.LuongCB});
+            this.ma,
+            this.ten,
+            this.dc,
+            this.sdt,
+            this.email,
+            this.ainfo,
+            this.date});
             this.dgv.Location = new System.Drawing.Point(350, 676);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
@@ -149,25 +148,68 @@
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
             this.dgv.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewCustomer_CellFormatting);
             // 
-            // NgayCong
+            // ma
             // 
-            this.NgayCong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.NgayCong.HeaderText = "NgayCong";
-            this.NgayCong.MinimumWidth = 25;
-            this.NgayCong.Name = "NgayCong";
-            this.NgayCong.ReadOnly = true;
-            this.NgayCong.Visible = false;
-            this.NgayCong.Width = 125;
+            this.ma.DataPropertyName = "Id";
+            this.ma.HeaderText = "Mã khách hàng";
+            this.ma.MinimumWidth = 6;
+            this.ma.Name = "ma";
+            this.ma.ReadOnly = true;
+            this.ma.Width = 65;
             // 
-            // LuongCB
+            // ten
             // 
-            this.LuongCB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.LuongCB.HeaderText = "LuongCB";
-            this.LuongCB.MinimumWidth = 6;
-            this.LuongCB.Name = "LuongCB";
-            this.LuongCB.ReadOnly = true;
-            this.LuongCB.Visible = false;
-            this.LuongCB.Width = 125;
+            this.ten.DataPropertyName = "DisplayName";
+            this.ten.HeaderText = "Tên khách hàng";
+            this.ten.MinimumWidth = 6;
+            this.ten.Name = "ten";
+            this.ten.ReadOnly = true;
+            this.ten.Width = 110;
+            // 
+            // dc
+            // 
+            this.dc.DataPropertyName = "Address";
+            this.dc.HeaderText = "Địa chỉ";
+            this.dc.MinimumWidth = 6;
+            this.dc.Name = "dc";
+            this.dc.ReadOnly = true;
+            this.dc.Width = 125;
+            // 
+            // sdt
+            // 
+            this.sdt.DataPropertyName = "ContactNum";
+            this.sdt.HeaderText = "SĐT liên hệ";
+            this.sdt.MinimumWidth = 6;
+            this.sdt.Name = "sdt";
+            this.sdt.ReadOnly = true;
+            this.sdt.Width = 125;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Width = 125;
+            // 
+            // ainfo
+            // 
+            this.ainfo.DataPropertyName = "AddInfo";
+            this.ainfo.HeaderText = "Thông tin khác";
+            this.ainfo.MinimumWidth = 6;
+            this.ainfo.Name = "ainfo";
+            this.ainfo.ReadOnly = true;
+            this.ainfo.Width = 125;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "ContractDate";
+            this.date.HeaderText = "Ngày bắt đầu mua hàng";
+            this.date.MinimumWidth = 6;
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.Width = 90;
             // 
             // gboxAdd
             // 
@@ -560,7 +602,7 @@
             this.Controls.Add(this.gBoxDelete);
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmCustomer.IconOptions.LargeImage")));
             this.Name = "frmCustomer";
-            this.Text = "Người dùng";
+            this.Text = "Khách hàng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustomer_FormClosing);
             this.Load += new System.EventHandler(this.frmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
@@ -580,11 +622,8 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label labelID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLuong;
         private System.Windows.Forms.PictureBox avatar;
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayCong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LuongCB;
         private System.Windows.Forms.GroupBox gboxAdd;
         private System.Windows.Forms.TextBox tbInfoA;
         private System.Windows.Forms.TextBox tbEmailA;
@@ -618,5 +657,12 @@
         private System.Windows.Forms.DateTimePicker dateA;
         private System.Windows.Forms.DateTimePicker dateB;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ainfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
     }
 }

@@ -55,11 +55,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
-            this.MaLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.avatar = new System.Windows.Forms.PictureBox();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.NgayCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LuongCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.em = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gboxAdd = new System.Windows.Forms.GroupBox();
             this.dateA = new System.Windows.Forms.DateTimePicker();
             this.tbInfoA = new System.Windows.Forms.TextBox();
@@ -278,6 +282,7 @@
             this.buttonEdit.TabIndex = 14;
             this.buttonEdit.Text = "Chỉnh sửa";
             this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // labelEdit
             // 
@@ -302,6 +307,7 @@
             this.buttonDelete.TabIndex = 15;
             this.buttonDelete.Text = "Xóa";
             this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // labelAdd
             // 
@@ -336,6 +342,7 @@
             this.buttonA.TabIndex = 7;
             this.buttonA.Text = "Thêm mới";
             this.buttonA.UseVisualStyleBackColor = false;
+            this.buttonA.Click += new System.EventHandler(this.buttonA_Click);
             // 
             // label6
             // 
@@ -367,16 +374,6 @@
             this.labelID.TabIndex = 22;
             this.labelID.Text = "Địa chỉ:";
             // 
-            // MaLuong
-            // 
-            this.MaLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.MaLuong.HeaderText = "MaLuong";
-            this.MaLuong.MinimumWidth = 25;
-            this.MaLuong.Name = "MaLuong";
-            this.MaLuong.ReadOnly = true;
-            this.MaLuong.Visible = false;
-            this.MaLuong.Width = 125;
-            // 
             // avatar
             // 
             this.avatar.Image = global::QuanLyKho_TT.Properties.Resources.avatar;
@@ -385,6 +382,7 @@
             this.avatar.Size = new System.Drawing.Size(73, 68);
             this.avatar.TabIndex = 49;
             this.avatar.TabStop = false;
+            this.avatar.Click += new System.EventHandler(this.avatar_Click);
             // 
             // dgv
             // 
@@ -392,9 +390,13 @@
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaLuong,
-            this.NgayCong,
-            this.LuongCB});
+            this.id,
+            this.ten,
+            this.add,
+            this.sdt,
+            this.em,
+            this.addin,
+            this.date});
             this.dgv.Location = new System.Drawing.Point(350, 676);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
@@ -403,25 +405,68 @@
             this.dgv.Size = new System.Drawing.Size(725, 154);
             this.dgv.TabIndex = 16;
             // 
-            // NgayCong
+            // id
             // 
-            this.NgayCong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.NgayCong.HeaderText = "NgayCong";
-            this.NgayCong.MinimumWidth = 25;
-            this.NgayCong.Name = "NgayCong";
-            this.NgayCong.ReadOnly = true;
-            this.NgayCong.Visible = false;
-            this.NgayCong.Width = 125;
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "Mã nhà cung cấp";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 65;
             // 
-            // LuongCB
+            // ten
             // 
-            this.LuongCB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.LuongCB.HeaderText = "LuongCB";
-            this.LuongCB.MinimumWidth = 6;
-            this.LuongCB.Name = "LuongCB";
-            this.LuongCB.ReadOnly = true;
-            this.LuongCB.Visible = false;
-            this.LuongCB.Width = 125;
+            this.ten.DataPropertyName = "DisplayName";
+            this.ten.HeaderText = "Tên nhà cung cấp";
+            this.ten.MinimumWidth = 6;
+            this.ten.Name = "ten";
+            this.ten.ReadOnly = true;
+            this.ten.Width = 110;
+            // 
+            // add
+            // 
+            this.add.DataPropertyName = "Address";
+            this.add.HeaderText = "Địa chỉ";
+            this.add.MinimumWidth = 6;
+            this.add.Name = "add";
+            this.add.ReadOnly = true;
+            this.add.Width = 125;
+            // 
+            // sdt
+            // 
+            this.sdt.DataPropertyName = "ContactNum";
+            this.sdt.HeaderText = "SĐT liên hệ";
+            this.sdt.MinimumWidth = 6;
+            this.sdt.Name = "sdt";
+            this.sdt.ReadOnly = true;
+            this.sdt.Width = 125;
+            // 
+            // em
+            // 
+            this.em.DataPropertyName = "Email";
+            this.em.HeaderText = "Email";
+            this.em.MinimumWidth = 6;
+            this.em.Name = "em";
+            this.em.ReadOnly = true;
+            this.em.Width = 125;
+            // 
+            // addin
+            // 
+            this.addin.DataPropertyName = "AddInfo";
+            this.addin.HeaderText = "Thông tin khác";
+            this.addin.MinimumWidth = 6;
+            this.addin.Name = "addin";
+            this.addin.ReadOnly = true;
+            this.addin.Width = 125;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "ContractDate";
+            this.date.HeaderText = "Ngày bắt đầu hợp tác";
+            this.date.MinimumWidth = 6;
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.Width = 90;
             // 
             // gboxAdd
             // 
@@ -588,11 +633,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label labelID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLuong;
         private System.Windows.Forms.PictureBox avatar;
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayCong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LuongCB;
         private System.Windows.Forms.GroupBox gboxAdd;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
@@ -613,5 +655,12 @@
         private System.Windows.Forms.DateTimePicker dateB;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dateA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn em;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
     }
 }

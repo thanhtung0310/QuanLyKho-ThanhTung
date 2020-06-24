@@ -54,7 +54,9 @@ namespace QuanLyKho_TT
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            Close();
+            frmLogin Login = new frmLogin();
+            Login.Show();
+            Hide();
         }
 
         private void frmSignUp_FormClosing(object sender, FormClosingEventArgs e)

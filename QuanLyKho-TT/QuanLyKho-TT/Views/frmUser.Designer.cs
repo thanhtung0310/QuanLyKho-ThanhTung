@@ -68,6 +68,7 @@
             this.avatar.Size = new System.Drawing.Size(73, 68);
             this.avatar.TabIndex = 23;
             this.avatar.TabStop = false;
+            this.avatar.Click += new System.EventHandler(this.avatar_Click);
             // 
             // labelHello
             // 

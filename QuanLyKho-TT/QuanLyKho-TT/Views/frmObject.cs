@@ -14,10 +14,10 @@ using QuanLyKho_TT.Model;
 namespace QuanLyKho_TT.Views
 {
     public partial class frmObject : DevExpress.XtraEditors.XtraForm
-    {
-        //Cho phép Admin, Nhân viên
+    {        
         AccessDataBase vatTu = new AccessDataBase();
         DataTable dtObject = new DataTable();
+
         public frmObject()
         {
             InitializeComponent();
@@ -64,10 +64,20 @@ namespace QuanLyKho_TT.Views
             cbbSupplierB.DisplayMember = "Id";
         }
 
+        void clearData()
+        {
+            tbNameA.Clear();
+            tbNameB.Clear();
+            cbbSupplierA.Text = "1";
+            cbbSupplierB.Text = "1";
+            cbbUnitA.Text = "1";
+            cbbUnitB.Text = "1";
+        }
+
         private void buttonA_Click(object sender, EventArgs e)
         {
             //thêm mới vật tư 
-            if (tbNameA.Text == "" & cbbUnitA.Text == "" & cbbSupplierA.Text == "")
+            if (tbNameA.Text == "" || cbbUnitA.Text == "Kg" || cbbSupplierA.Text == "CompanyA")
             {
                 MessageBox.Show("Vui lòng kiểm tra lại các thông tin nhập.", "Thông báo.");
             }
@@ -76,6 +86,7 @@ namespace QuanLyKho_TT.Views
                 SqlCommand add = new SqlCommand("insert into Object values ('" + tbNameA.Text + "','" + cbbUnitA.Text + "','" + cbbSupplierA.Text + "')");
                 vatTu.executeQuery(add);
                 MessageBox.Show("Thêm mới thành công.", "Thông báo.");
+                clearData();
             }
             loadData();
         }
@@ -83,28 +94,24 @@ namespace QuanLyKho_TT.Views
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             //chỉnh sửa các thông tin vật tư
-            if (tbNameB.Text == "" & cbbUnitB.Text == "" & cbbSupplierB.Text == "")
+            if (tbNameB.Text == "" || cbbUnitB.Text == "Chris" || cbbSupplierB.Text == "CompanyA")
             {
                 MessageBox.Show("Vui lòng kiểm tra lại các thông tin chỉnh sửa.", "Thông báo.");
             }
             else
             {
-                SqlCommand edit = new SqlCommand("update Object set IdUnit = '" + cbbUnitB.Text + "', IdSupplier = '" + cbbSupplierB.Text + "' where DisplayName = '" + tbNameB.Text + "'");
+                SqlCommand edit = new SqlCommand("update Object set IdUnit = '" + cbbUnitB.Text + "', IdSupplier = '" + cbbSupplierB.Text + "' where DisplayName = N'" + tbNameB.Text + "'");
                 vatTu.executeQuery(edit);
                 MessageBox.Show("Chỉnh sửa thành công.", "Thông báo.");
+                clearData();
             }
             loadData();
         }
 
-        private void buttonSearch_Click(object sender, EventArgs e)
-        {
-            //lấy nhanh thông tin vật tư
-            search();
-        }
-
         public void search()
         {
-            string search = "select * from Object where DisplayName = '" + tbNameB.Text + "'";
+            dtObject.Clear();
+            string search = "select * from Object where DisplayName = N'" + tbNameB.Text + "'";
             vatTu.readDatathroughAdapter(search, dtObject);
             if (dtObject.Rows.Count == 0)
             {
@@ -113,7 +120,6 @@ namespace QuanLyKho_TT.Views
             else
             {
                 //lấy thông tin nhân viên từ dtb
-                tbNameB.Text = dtObject.Rows[0]["DisplayName"].ToString();
                 cbbUnitB.Text = dtObject.Rows[0]["IdUnit"].ToString();
                 cbbSupplierB.Text = dtObject.Rows[0]["IdSupplier"].ToString();
             }
@@ -122,13 +128,13 @@ namespace QuanLyKho_TT.Views
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             //xóa thông tin vật tư
-            if (tbNameB.Text == "" & cbbUnitB.Text == "" & cbbSupplierB.Text == "")
+            if (tbNameB.Text == "" || cbbUnitB.Text == "Chris" || cbbSupplierB.Text == "CompanyA")
             {
-
+                MessageBox.Show("Vui lòng kiểm tra lại các thông tin xóa.", "Thông báo.");
             }
             else
-            {
-                SqlCommand delete = new SqlCommand("delete from Object where DisplayName = '" + tbNameB.Text + "'");
+            {     
+                SqlCommand delete = new SqlCommand("delete from Object where DisplayName = N'" + tbNameB.Text + "'");
                 vatTu.executeQuery(delete);
                 MessageBox.Show("Xóa thành công.", "Thông báo.");
             }
@@ -170,6 +176,35 @@ namespace QuanLyKho_TT.Views
             {
                 e.Cancel = true;
             }
+        }
+
+        private void tbNameB_KeyDown(object sender, KeyEventArgs e)
+        {
+            //nhấn F10 để tìm kiếm nhanh thông tin
+            if (e.KeyCode == Keys.F10)
+            {
+                if (tbNameB.Text == "")
+                {
+                    MessageBox.Show("Vui lòng kiểm tra lại thông tin tìm kiếm.","Thông báo.");
+                }
+                {
+                    search();
+                }
+            }
+        }
+
+        private void tbNameB_Click(object sender, EventArgs e)
+        {
+            dtObject.Clear();
+            MessageBox.Show("Sau khi nhập tên hiển thị vui lòng ấn nut F10 để tự động nhập nốt các thông tin còn lại.", "Thông báo.");
+            clearData();
+        }
+
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            Views.frmUser frmUser = new Views.frmUser();
+            frmUser.Show();
+            Hide();
         }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmObject));
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.labelEdit = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -58,8 +57,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.id3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv2 = new System.Windows.Forms.DataGridView();
+            this.id2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxDelete.SuspendLayout();
             this.gboxAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -68,18 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.BackColor = System.Drawing.Color.Yellow;
-            this.buttonSearch.Font = new System.Drawing.Font("Cambria", 10F);
-            this.buttonSearch.Location = new System.Drawing.Point(621, 82);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(57, 29);
-            this.buttonSearch.TabIndex = 6;
-            this.buttonSearch.Text = "Tìm";
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // buttonEdit
             // 
@@ -129,7 +124,6 @@
             this.gBoxDelete.Controls.Add(this.label2);
             this.gBoxDelete.Controls.Add(this.label3);
             this.gBoxDelete.Controls.Add(this.label4);
-            this.gBoxDelete.Controls.Add(this.buttonSearch);
             this.gBoxDelete.Controls.Add(this.buttonEdit);
             this.gBoxDelete.Controls.Add(this.labelEdit);
             this.gBoxDelete.Controls.Add(this.buttonDelete);
@@ -149,7 +143,7 @@
             this.cbbSupplierB.Location = new System.Drawing.Point(282, 164);
             this.cbbSupplierB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbSupplierB.Name = "cbbSupplierB";
-            this.cbbSupplierB.Size = new System.Drawing.Size(329, 35);
+            this.cbbSupplierB.Size = new System.Drawing.Size(371, 35);
             this.cbbSupplierB.TabIndex = 8;
             // 
             // cbbUnitB
@@ -160,7 +154,7 @@
             this.cbbUnitB.Location = new System.Drawing.Point(282, 120);
             this.cbbUnitB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbUnitB.Name = "cbbUnitB";
-            this.cbbUnitB.Size = new System.Drawing.Size(329, 35);
+            this.cbbUnitB.Size = new System.Drawing.Size(371, 35);
             this.cbbUnitB.TabIndex = 7;
             // 
             // tbNameB
@@ -170,8 +164,10 @@
             this.tbNameB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbNameB.Multiline = true;
             this.tbNameB.Name = "tbNameB";
-            this.tbNameB.Size = new System.Drawing.Size(329, 36);
+            this.tbNameB.Size = new System.Drawing.Size(371, 36);
             this.tbNameB.TabIndex = 5;
+            this.tbNameB.Click += new System.EventHandler(this.tbNameB_Click);
+            this.tbNameB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbNameB_KeyDown);
             // 
             // label2
             // 
@@ -350,6 +346,7 @@
             this.avatar.Size = new System.Drawing.Size(73, 68);
             this.avatar.TabIndex = 41;
             this.avatar.TabStop = false;
+            this.avatar.Click += new System.EventHandler(this.avatar_Click);
             // 
             // labelHome
             // 
@@ -397,6 +394,9 @@
             // dgv1
             // 
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id1,
+            this.ten1});
             this.dgv1.Location = new System.Drawing.Point(51, 455);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowHeadersWidth = 51;
@@ -404,23 +404,95 @@
             this.dgv1.Size = new System.Drawing.Size(264, 143);
             this.dgv1.TabIndex = 46;
             // 
+            // id1
+            // 
+            this.id1.DataPropertyName = "Id";
+            this.id1.HeaderText = "Mã đơn vị đo";
+            this.id1.MinimumWidth = 6;
+            this.id1.Name = "id1";
+            this.id1.Width = 65;
+            // 
+            // ten1
+            // 
+            this.ten1.DataPropertyName = "DisplayName";
+            this.ten1.HeaderText = "Tên đơn vị đo";
+            this.ten1.MinimumWidth = 6;
+            this.ten1.Name = "ten1";
+            this.ten1.Width = 125;
+            // 
             // dgv
             // 
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id3,
+            this.ten3,
+            this.id4,
+            this.id5});
             this.dgv.Location = new System.Drawing.Point(777, 455);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersWidth = 51;
             this.dgv.Size = new System.Drawing.Size(464, 143);
             this.dgv.TabIndex = 47;
             // 
+            // id3
+            // 
+            this.id3.DataPropertyName = "Id";
+            this.id3.HeaderText = "Mã vật tư";
+            this.id3.MinimumWidth = 6;
+            this.id3.Name = "id3";
+            this.id3.Width = 65;
+            // 
+            // ten3
+            // 
+            this.ten3.DataPropertyName = "DisplayName";
+            this.ten3.HeaderText = "Tên vật tư";
+            this.ten3.MinimumWidth = 6;
+            this.ten3.Name = "ten3";
+            this.ten3.Width = 125;
+            // 
+            // id4
+            // 
+            this.id4.DataPropertyName = "IdUnit";
+            this.id4.HeaderText = "Mã đơn vị đo";
+            this.id4.MinimumWidth = 6;
+            this.id4.Name = "id4";
+            this.id4.Width = 65;
+            // 
+            // id5
+            // 
+            this.id5.DataPropertyName = "IdSupplier";
+            this.id5.HeaderText = "Mã nhà cung cấp";
+            this.id5.MinimumWidth = 6;
+            this.id5.Name = "id5";
+            this.id5.Width = 125;
+            // 
             // dgv2
             // 
             this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id2,
+            this.ten2});
             this.dgv2.Location = new System.Drawing.Point(341, 455);
             this.dgv2.Name = "dgv2";
             this.dgv2.RowHeadersWidth = 51;
             this.dgv2.Size = new System.Drawing.Size(302, 143);
             this.dgv2.TabIndex = 48;
+            // 
+            // id2
+            // 
+            this.id2.DataPropertyName = "Id";
+            this.id2.HeaderText = "Mã nhà cung cấp";
+            this.id2.MinimumWidth = 6;
+            this.id2.Name = "id2";
+            this.id2.Width = 65;
+            // 
+            // ten2
+            // 
+            this.ten2.DataPropertyName = "DisplayName";
+            this.ten2.HeaderText = "Tên nhà cung cấp";
+            this.ten2.MinimumWidth = 6;
+            this.ten2.Name = "ten2";
+            this.ten2.Width = 125;
             // 
             // frmObject
             // 
@@ -460,8 +532,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Label labelEdit;
         private System.Windows.Forms.Button buttonDelete;
@@ -492,5 +562,13 @@
         private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.DataGridView dgv2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ten1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ten3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ten2;
     }
 }
