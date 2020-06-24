@@ -75,20 +75,34 @@ namespace QuanLyKho_TT.Views
                 XtraMessageBox.Show("Đơn vị đo đã tồn tại.", "Thông báo.");
             else
             {
-                //Thêm mới đơn vị đo
-                SqlCommand add = new SqlCommand("insert into Unit values('" + tbNameA.Text + "')");
-                unit.executeQuery(add);
-                MessageBox.Show("Thêm thành công.", "Thông báo.");
-                loadData();
+                if (tbNameA.Text == "")
+                {
+                    MessageBox.Show("Vui lòng kiểm tra lại thông tin nhập.", "Thông báo.");
+                }
+                else
+                {
+                    //Thêm mới đơn vị đo
+                    SqlCommand add = new SqlCommand("insert into Unit values('" + tbNameA.Text + "')");
+                    unit.executeQuery(add);
+                    MessageBox.Show("Thêm thành công.", "Thông báo.");
+                }
             }
+            loadData();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            //Xóa đi đơn vị đo
-            SqlCommand delete = new SqlCommand("Delete from Unit where DisplayName = '" + tbNameB.Text + "'");
-            unit.executeQuery(delete);
-            MessageBox.Show("Xóa thành công.", "Thông báo.");
+            if (tbNameB.Text == "")
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin nhập.", "Thông báo.");
+            }
+            else
+            {
+                //Xóa đi đơn vị đo
+                SqlCommand delete = new SqlCommand("Delete from Unit where DisplayName = '" + tbNameB.Text + "'");
+                unit.executeQuery(delete);
+                MessageBox.Show("Xóa thành công.", "Thông báo.");
+            }            
             loadData();
         }
 
@@ -125,6 +139,13 @@ namespace QuanLyKho_TT.Views
             {
                 e.Cancel = true;
             }
+        }
+
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            Views.frmUser frmUser = new Views.frmUser();
+            frmUser.Show();
+            Hide();
         }
     }
 }

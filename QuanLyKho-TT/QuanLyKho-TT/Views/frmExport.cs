@@ -31,7 +31,7 @@ namespace QuanLyKho_TT.Views
             //load 2 bảng và 2cbb
             loadData();
 
-            MessageBox.Show("Vui lòng nhập đầy đủ thông tin đơn. (mã đơn, giá nhập, giá bán)");
+            MessageBox.Show("Vui lòng nhập đầy đủ thông tin đơn (mã đơn, số lượng) và tìm kiếm thông tin đơn trước khi chỉnh sửa hoặc xóa đơn.");
         }
 
         private void loadData()
@@ -42,8 +42,9 @@ namespace QuanLyKho_TT.Views
 
             da1.Fill(dtNhap);
             dgv1.DataSource = dtNhap;
-            cbbIDA.DisplayMember = "Id";
+            cbbIDA.ValueMember = "Id";
             cbbIDA.DataSource = dtNhap;
+
             //combobox khách hàng
             SqlDataAdapter da2 = new SqlDataAdapter("select Id, DisplayName from CUSTOMER", AccessDataBase.connection);
             DataTable dtCus = new DataTable();
@@ -55,23 +56,28 @@ namespace QuanLyKho_TT.Views
             cbbCusB.DisplayMember = "DisplayName";
             cbbCusB.ValueMember = "Id";
             cbbCusB.DataSource = dtCus;
+
             //danh sách đơn đã xuất
             SqlDataAdapter da3 = new SqlDataAdapter("select o2.Id, o.DisplayName, o2.Count, i.OutputPrice, c.DisplayName, o2.Status, o1.OutputDate " +
                 "from OUTPUT o1, OUTPUTINFO o2, OBJECT o, CUSTOMER c, INPUTINFO i " +
-                "where o1.Id = o2.Id and o2.IdCustomer = c.Id and o2.IdInputInfo = i.Id and i.IdObject = o.Id", AccessDataBase.connection);
-            DataTable dtXuat = new DataTable();
+                "where (o1.Id = o2.Id) and (o2.IdCustomer = c.Id) and (o2.IdInputInfo = i.Id) and (i.IdObject = o.Id)", AccessDataBase.connection);
+            DataTable dtXuat1 = new DataTable();
 
-            da3.Fill(dtXuat);
-            dgv.DataSource = dtXuat;
+            da3.Fill(dtXuat1);
+            dgv.DataSource = dtXuat1;
             cbbIDB.DisplayMember = "Id";
-            cbbIDB.DataSource = dtXuat;
-            //cbb mã nhập
-            SqlDataAdapter da4 = new SqlDataAdapter("select * from INPUtINFO", AccessDataBase.connection);
-            DataTable dtMaNhap = new DataTable();
+            cbbIDB.DataSource = dtXuat1;
+        }
 
-            da4.Fill(dtMaNhap);
-            cbbIDA.DisplayMember = "Id";
-            cbbIDA.DataSource = dtMaNhap;
+        void clearData()
+        {
+            cbbIDA.Text = "0";
+            num1.Text = "0";
+            numberA.Text = "0";
+            numberB.Text = "0";
+            tbStatus.Clear();
+            cbbCusA.Text = "1";
+            cbbCusB.Text = "1";
         }
 
         private void labelHome_Click(object sender, EventArgs e)
@@ -93,23 +99,15 @@ namespace QuanLyKho_TT.Views
             }
         }
 
-        private void labelHome_Click_1(object sender, EventArgs e)
-        {
-            //trở về màn hình chính
-            frmMain frmMain = new frmMain();
-            frmMain.Show();
-            Hide();
-        }
-
         private void buttonA_Click(object sender, EventArgs e)
         {
-            if (cbbIDA.Text == "0" && numberA.Value.ToString() == "0" && cbbCusA.Text == "")
+            if (cbbIDA.Text == "0" || numberA.Text == "0" || cbbCusA.Text == "Chris")
             {
                 MessageBox.Show("Vui lòng kiểm tra lại các thông tin nhập.", "Thông báo.");
             }
             else
             {
-                string check = "select * from OUTPUT where Id ='" + tbIDOA.Text + "'";
+                string check = "select * from OUTPUT o1, OUTPUTINFO o2 where (o1.Id = o2.Id) and (o1.Id = '" + num1.Value + "')";
                 xuat.readDatathroughAdapter(check, dtXuat);
                 if (dtXuat.Rows.Count != 0)
                 {
@@ -117,12 +115,13 @@ namespace QuanLyKho_TT.Views
                 }
                 else
                 {
-                    SqlCommand add1 = new SqlCommand("insert into OUTPUT(Id,OutputDate) values ('" + tbIDOA.Text + "','" + dateA.Value.ToString() + "')");
-                    SqlCommand add2 = new SqlCommand("insert into OUTPUTINFO(Id,IdInputInfo,IdCustomer,Count) values ('" + tbIDOA.Text + "','" + cbbIDA.Text
-                        + "','" + cbbCusA.SelectedValue + "','" + numberA.Value.ToString() + "')");
-                    xuat.executeQuery(add1);
+                    SqlCommand add1 = new SqlCommand("insert into OUTPUT(Id,OutputDate) values ('" + num1.Text + "','" + dateA.Value.ToString() + "')");
+                    SqlCommand add2 = new SqlCommand("insert into OUTPUTINFO(Id,IdInputInfo,IdCustomer,Count) values ('" + num1.Text + "','" + cbbIDA.Text
+                        + "','" + cbbCusA.SelectedValue + "','" + numberA.Text + "')");
                     xuat.executeQuery(add2);
+                    xuat.executeQuery(add1);
                     MessageBox.Show("Thêm đơn thành công.", "Thông báo.");
+                    clearData();
                 }
             }
             loadData();
@@ -130,16 +129,17 @@ namespace QuanLyKho_TT.Views
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            if (cbbIDB.Text == "0" && numberB.Value.ToString() == "0" && cbbCusB.Text == "" && tbStatus.Text == "")
+            if (cbbIDB.Text == "0" || numberB.Text == "0" || cbbCusB.Text == "Chris" || tbStatus.Text == "")
             {
                 MessageBox.Show("Vui lòng kiêm tra lại thông tin chỉnh sửa.", "Thông báo.");
             }
             else
             {
-                SqlCommand edit = new SqlCommand("update OUTPUTINFO set Count = '" + numberB.Value.ToString() + "', IdCustomer = '" + cbbCusB.SelectedValue +
+                SqlCommand edit = new SqlCommand("update OUTPUTINFO set Count = '" + numberB.Text + "', IdCustomer = '" + cbbCusB.SelectedValue +
                     "', Status = '" + tbStatus.Text + "' where Id = '" + cbbIDB.Text + "'");
                 xuat.executeQuery(edit);
                 MessageBox.Show("Chỉnh sửa thành công.", "Thông báo.");
+                clearData();
             }
             loadData();
         }
@@ -151,7 +151,7 @@ namespace QuanLyKho_TT.Views
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            string check = "select * from OUTPUT o, OUTPUTINFO o1 where o.Id = o1.Id and o.Id = '" + cbbIDB.Text + "'";
+            string check = "select * from OUTPUT o, OUTPUTINFO o1 where (o.Id = o1.Id) and (o.Id = '" + cbbIDB.Text + "')";
             xuat.readDatathroughAdapter(check, dtXuat);
             if (dtXuat.Rows.Count == 0)
             {
@@ -164,6 +164,7 @@ namespace QuanLyKho_TT.Views
                 xuat.executeQuery(del1);
                 xuat.executeQuery(del2);
                 MessageBox.Show("Xóa đơn xuất thành công.", "Thông báo.");
+                clearData();
             }
             loadData();
         }
@@ -179,6 +180,51 @@ namespace QuanLyKho_TT.Views
             {
                 e.Cancel = true;
             }
+        }
+
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            Views.frmUser frmUser = new Views.frmUser();
+            frmUser.Show();
+            Hide();
+        }
+
+        void search()
+        {
+            dtXuat.Clear();
+            string search = "select * " +
+                "from OUTPUT o1, OUTPUTINFO o2, CUSTOMER c " +
+                "where (o1.Id = o2.Id) and (c.Id = o2.IdCustomer) and (o1.Id = '" + cbbIDB.Text + "')";
+            xuat.readDatathroughAdapter(search, dtXuat);
+            if (dtXuat.Rows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại mã đơn xuất.", "Thông báo.");
+            }
+            else
+            {
+                //lấy thông tin nhân viên từ dtb
+                numberB.Text = dtXuat.Rows[0]["Count"].ToString();
+                cbbCusB.Text = dtXuat.Rows[0]["DisplayName"].ToString();
+                tbStatus.Text = dtXuat.Rows[0]["Status"].ToString();
+                MessageBox.Show("Tìm kiếm thành công.", "Thông báo.");
+            }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            if (cbbIDB.Text == "0")
+            {
+                MessageBox.Show("Vui lòng kiêm tra lại thông tin tìm kiếm.", "Thông báo.");
+            }   
+            else
+            {
+                search();
+            }
+        }
+
+        private void cbbIDB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            clearData();
         }
     }
 }

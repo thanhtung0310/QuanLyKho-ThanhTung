@@ -57,6 +57,13 @@
             this.labelID = new System.Windows.Forms.Label();
             this.avatar = new System.Windows.Forms.PictureBox();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.em = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gboxAdd = new System.Windows.Forms.GroupBox();
             this.dateA = new System.Windows.Forms.DateTimePicker();
             this.tbInfoA = new System.Windows.Forms.TextBox();
@@ -67,13 +74,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.em = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.gBoxDelete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
@@ -382,6 +382,7 @@
             this.avatar.Size = new System.Drawing.Size(73, 68);
             this.avatar.TabIndex = 49;
             this.avatar.TabStop = false;
+            this.avatar.Click += new System.EventHandler(this.avatar_Click);
             // 
             // dgv
             // 
@@ -403,6 +404,69 @@
             this.dgv.RowTemplate.Height = 24;
             this.dgv.Size = new System.Drawing.Size(725, 154);
             this.dgv.TabIndex = 16;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "Mã nhà cung cấp";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 65;
+            // 
+            // ten
+            // 
+            this.ten.DataPropertyName = "DisplayName";
+            this.ten.HeaderText = "Tên nhà cung cấp";
+            this.ten.MinimumWidth = 6;
+            this.ten.Name = "ten";
+            this.ten.ReadOnly = true;
+            this.ten.Width = 110;
+            // 
+            // add
+            // 
+            this.add.DataPropertyName = "Address";
+            this.add.HeaderText = "Địa chỉ";
+            this.add.MinimumWidth = 6;
+            this.add.Name = "add";
+            this.add.ReadOnly = true;
+            this.add.Width = 125;
+            // 
+            // sdt
+            // 
+            this.sdt.DataPropertyName = "ContactNum";
+            this.sdt.HeaderText = "SĐT liên hệ";
+            this.sdt.MinimumWidth = 6;
+            this.sdt.Name = "sdt";
+            this.sdt.ReadOnly = true;
+            this.sdt.Width = 125;
+            // 
+            // em
+            // 
+            this.em.DataPropertyName = "Email";
+            this.em.HeaderText = "Email";
+            this.em.MinimumWidth = 6;
+            this.em.Name = "em";
+            this.em.ReadOnly = true;
+            this.em.Width = 125;
+            // 
+            // addin
+            // 
+            this.addin.DataPropertyName = "AddInfo";
+            this.addin.HeaderText = "Thông tin khác";
+            this.addin.MinimumWidth = 6;
+            this.addin.Name = "addin";
+            this.addin.ReadOnly = true;
+            this.addin.Width = 125;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "ContractDate";
+            this.date.HeaderText = "Ngày bắt đầu hợp tác";
+            this.date.MinimumWidth = 6;
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.Width = 90;
             // 
             // gboxAdd
             // 
@@ -519,67 +583,6 @@
             this.label11.TabIndex = 51;
             this.label11.Text = "Đăng xuất";
             this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Mã nhà cung cấp";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 65;
-            // 
-            // ten
-            // 
-            this.ten.DataPropertyName = "DisplayName";
-            this.ten.HeaderText = "Tên nhà cung cấp";
-            this.ten.MinimumWidth = 6;
-            this.ten.Name = "ten";
-            this.ten.ReadOnly = true;
-            this.ten.Width = 110;
-            // 
-            // add
-            // 
-            this.add.DataPropertyName = "Address";
-            this.add.HeaderText = "Địa chỉ";
-            this.add.MinimumWidth = 6;
-            this.add.Name = "add";
-            this.add.ReadOnly = true;
-            this.add.Width = 125;
-            // 
-            // sdt
-            // 
-            this.sdt.DataPropertyName = "ContactNum";
-            this.sdt.HeaderText = "SĐT liên hệ";
-            this.sdt.MinimumWidth = 6;
-            this.sdt.Name = "sdt";
-            this.sdt.ReadOnly = true;
-            // 
-            // em
-            // 
-            this.em.DataPropertyName = "Email";
-            this.em.HeaderText = "Email";
-            this.em.MinimumWidth = 6;
-            this.em.Name = "em";
-            this.em.ReadOnly = true;
-            // 
-            // addin
-            // 
-            this.addin.DataPropertyName = "AddInfo";
-            this.addin.HeaderText = "Thông tin khác";
-            this.addin.MinimumWidth = 6;
-            this.addin.Name = "addin";
-            this.addin.ReadOnly = true;
-            this.addin.Width = 125;
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "ContractDate";
-            this.date.HeaderText = "Ngày bắt đầu hợp tác";
-            this.date.MinimumWidth = 6;
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            this.date.Width = 90;
             // 
             // frmSupplier
             // 

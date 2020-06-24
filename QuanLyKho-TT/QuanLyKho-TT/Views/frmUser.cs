@@ -97,5 +97,12 @@ namespace QuanLyKho_TT.Views
                 e.Cancel = true;
             }
         }
+
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            Views.frmUser frmUser = new Views.frmUser();
+            frmUser.Show();
+            Hide();
+        }
     }
 }

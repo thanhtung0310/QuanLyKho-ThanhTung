@@ -37,7 +37,7 @@ namespace QuanLyKho_TT.Views
         private void buttonA_Click(object sender, EventArgs e)
         {
             //thêm mới nhà cung cấp
-            if (tbNameA.Text == "" & tbAddressA.Text == "" & tbPhoneA.Text == "" & tbEmailA.Text == "" & tbInfoA.Text == "" & dateA.Value == null)
+            if (tbNameA.Text == "" || tbAddressA.Text == "" || tbPhoneA.Text == "" || tbEmailA.Text == "" || tbInfoA.Text == "" || dateA.Value == null)
             {
                 MessageBox.Show("Vui lòng kiểm tra lại các thông tin nhập.", "Thông báo.");
             }
@@ -55,7 +55,7 @@ namespace QuanLyKho_TT.Views
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             //chỉnh sửa các thông tin nhà cung cấp
-            if (tbNameB.Text == "" & tbAddressB.Text == "" & tbPhoneB.Text == "" & tbEmailB.Text == "" & tbInfoB.Text == "" & dateB.Value == null)
+            if (tbNameB.Text == "" || tbAddressB.Text == "" || tbPhoneB.Text == "" || tbEmailB.Text == "" || tbInfoB.Text == "" || dateB.Value == null)
             {
                 MessageBox.Show("Vui lòng kiểm tra lại các thông tin chỉnh sửa.", "Thông báo.");
             }
@@ -74,9 +74,9 @@ namespace QuanLyKho_TT.Views
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             //xóa thông tin nhà cung cấp
-            if (tbNameB.Text != "" & tbAddressB.Text == "" & tbPhoneB.Text == "" & tbEmailB.Text == "" & tbInfoB.Text == "" & dateB.Value == null)
+            if (tbNameB.Text != "" || tbAddressB.Text == "" || tbPhoneB.Text == "" || tbEmailB.Text == "" || tbInfoB.Text == "" || dateB.Value == null)
             {
-
+                MessageBox.Show("Vui lòng kiểm tra lại các thông tin xóa.", "Thông báo.");
             }
             else
             {     
@@ -184,7 +184,14 @@ namespace QuanLyKho_TT.Views
             //nhấn F12 để tìm kiếm nhanh thông tin
             if (e.KeyCode == Keys.F12)
             {
-                search();
+                if (tbNameB.Text == "")
+                {
+                    MessageBox.Show("Vui lòng kiểm tra thông tin tìm kiếm.","Thông báo.");
+                }
+                else
+                {
+                    search();
+                }    
             }
         }
 
@@ -211,6 +218,13 @@ namespace QuanLyKho_TT.Views
             {
                 e.Cancel = true;
             }
+        }
+
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            Views.frmUser frmUser = new Views.frmUser();
+            frmUser.Show();
+            Hide();
         }
     }
 }

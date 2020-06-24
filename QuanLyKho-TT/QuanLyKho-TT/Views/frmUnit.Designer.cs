@@ -45,9 +45,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.gboxAdd.SuspendLayout();
@@ -150,6 +150,7 @@
             this.avatar.Size = new System.Drawing.Size(73, 68);
             this.avatar.TabIndex = 49;
             this.avatar.TabStop = false;
+            this.avatar.Click += new System.EventHandler(this.avatar_Click);
             // 
             // gboxAdd
             // 
@@ -240,18 +241,6 @@
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             this.dgv.Click += new System.EventHandler(this.dgv_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Underline);
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(1110, 37);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 22);
-            this.label7.TabIndex = 53;
-            this.label7.Text = "Đăng xuất";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
@@ -267,6 +256,18 @@
             this.ten.MinimumWidth = 6;
             this.ten.Name = "ten";
             this.ten.Width = 125;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Underline);
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(1110, 37);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 22);
+            this.label7.TabIndex = 53;
+            this.label7.Text = "Đăng xuất";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // frmUnit
             // 

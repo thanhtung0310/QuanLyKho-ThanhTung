@@ -77,7 +77,7 @@ namespace QuanLyKho_TT.Views
         private void buttonA_Click(object sender, EventArgs e)
         {
             //thêm mới vật tư 
-            if (tbNameA.Text == "" & cbbUnitA.Text == "1" & cbbSupplierA.Text == "1")
+            if (tbNameA.Text == "" || cbbUnitA.Text == "Kg" || cbbSupplierA.Text == "CompanyA")
             {
                 MessageBox.Show("Vui lòng kiểm tra lại các thông tin nhập.", "Thông báo.");
             }
@@ -94,7 +94,7 @@ namespace QuanLyKho_TT.Views
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             //chỉnh sửa các thông tin vật tư
-            if (tbNameB.Text == "" & cbbUnitB.Text == "" & cbbSupplierB.Text == "")
+            if (tbNameB.Text == "" || cbbUnitB.Text == "Chris" || cbbSupplierB.Text == "CompanyA")
             {
                 MessageBox.Show("Vui lòng kiểm tra lại các thông tin chỉnh sửa.", "Thông báo.");
             }
@@ -128,9 +128,9 @@ namespace QuanLyKho_TT.Views
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             //xóa thông tin vật tư
-            if (tbNameB.Text == "" & cbbUnitB.Text == "" & cbbSupplierB.Text == "")
+            if (tbNameB.Text == "" || cbbUnitB.Text == "Chris" || cbbSupplierB.Text == "CompanyA")
             {
-
+                MessageBox.Show("Vui lòng kiểm tra lại các thông tin xóa.", "Thông báo.");
             }
             else
             {     
@@ -183,7 +183,13 @@ namespace QuanLyKho_TT.Views
             //nhấn F10 để tìm kiếm nhanh thông tin
             if (e.KeyCode == Keys.F10)
             {
-                search();
+                if (tbNameB.Text == "")
+                {
+                    MessageBox.Show("Vui lòng kiểm tra lại thông tin tìm kiếm.","Thông báo.");
+                }
+                {
+                    search();
+                }
             }
         }
 
@@ -192,6 +198,13 @@ namespace QuanLyKho_TT.Views
             dtObject.Clear();
             MessageBox.Show("Sau khi nhập tên hiển thị vui lòng ấn nut F10 để tự động nhập nốt các thông tin còn lại.", "Thông báo.");
             clearData();
+        }
+
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            Views.frmUser frmUser = new Views.frmUser();
+            frmUser.Show();
+            Hide();
         }
     }
 }
