@@ -36,7 +36,7 @@ namespace QuanLyKho_TT
         {
             string search = "select * from Users where Username = '" + txbUsername.Text + "'";
 
-            SqlCommand insert = new SqlCommand("insert into Users(Username,Password, IdRole) values('" + txbUsername.Text + "','" + txbPassword.Text + "', 4)");            
+            SqlCommand insert = new SqlCommand("insert into Users(DisplayName,Username,Password, IdRole) values('Guest','" + txbUsername.Text + "','" + txbPassword.Text + "', 3)");            
             dbAccess.readDatathroughAdapter(search, dtUsers);
             if (dtUsers.Rows.Count == 0 && txbPasswordR.Text == txbPassword.Text)
             {
