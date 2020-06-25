@@ -10,12 +10,22 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using QuanLyKho_TT.Model;
 using System.Data.SqlClient;
+using QuanLyKho_TT.Views;
 
 namespace QuanLyKho_TT
 {
     public partial class frmMain : DevExpress.XtraEditors.XtraForm
     {
         AccessDataBase main = new AccessDataBase();
+
+        Views.frmImport frmImport = new Views.frmImport();
+        Views.frmObject frmObject = new Views.frmObject();
+        Views.frmCustomer frmCustomer = new Views.frmCustomer();
+        Views.frmSupplier frmSupplier = new Views.frmSupplier();
+        Views.frmUnit frmUnit = new Views.frmUnit();
+        Views.frmExport frmExport = new Views.frmExport();
+        Views.frmUser frmUser = new Views.frmUser();
+
         public frmMain()
         {
             InitializeComponent();
@@ -32,7 +42,8 @@ namespace QuanLyKho_TT
 
             //cập nhật số lượng hàng nhập, hàng xuất, hàng tồn kho
             loadData();
-            
+
+            checkQuyen();
         }
 
         private void loadData()
@@ -73,49 +84,43 @@ namespace QuanLyKho_TT
 
         private void buttonImport_Click(object sender, EventArgs e)
         {
-            Views.frmImport frmImport = new Views.frmImport();
+            
             frmImport.Show();
             Hide();
         }
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
-            Views.frmExport frmExport = new Views.frmExport();
             frmExport.Show();
             Hide();
         }
 
         private void buttonObject_Click(object sender, EventArgs e)
         {
-            Views.frmObject frmObject = new Views.frmObject();
             frmObject.Show();
             Hide();
         }
 
         private void buttonUnit_Click(object sender, EventArgs e)
         {
-            Views.frmUnit frmUnit = new Views.frmUnit();
             frmUnit.Show();
             Hide();
         }
 
         private void buttonSupplier_Click(object sender, EventArgs e)
         {
-            Views.frmSupplier frmSupplier = new Views.frmSupplier();
             frmSupplier.Show();
             Hide();
         }
 
         private void buttonCustomer_Click(object sender, EventArgs e)
         {
-            Views.frmCustomer frmCustomer = new Views.frmCustomer();
             frmCustomer.Show();
             Hide();
         }
 
         private void buttonUser_Click(object sender, EventArgs e)
         {
-            Views.frmUser frmUser = new Views.frmUser();
             frmUser.Show();
             Hide();
         }
@@ -149,6 +154,44 @@ namespace QuanLyKho_TT
             {
                 e.Cancel = true;
             }                    
+        }
+
+        void checkQuyen()
+        {
+            string permission = frmLogin.quyen;
+            if (permission == "1")
+            {
+                MessageBox.Show("Chào ADMIN.");
+                frmImport.Enabled = true;
+                frmExport.Enabled = true;
+                frmCustomer.Enabled = true;
+                frmObject.Enabled = true;
+                frmSupplier.Enabled = true;
+                frmUnit.Enabled = true;
+                frmUser.Enabled = true;
+            }
+            else if (permission == "2")
+            {
+                MessageBox.Show("Chào STAFF.");
+                frmImport.Enabled = true;
+                frmExport.Enabled = true;
+                frmCustomer.Enabled = true;
+                buttonObject.Enabled = false;
+                buttonSupplier.Enabled = false;
+                buttonUnit.Enabled = false;
+                frmUser.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Chào BẠN?");
+                buttonImport.Enabled = false;
+                buttonExport.Enabled = false;
+                buttonCustomer.Enabled = false;
+                buttonObject.Enabled = false;
+                buttonSupplier.Enabled = false;
+                buttonUnit.Enabled = false;
+                frmUser.Enabled = true;
+            }
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
