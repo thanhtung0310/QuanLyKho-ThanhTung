@@ -238,7 +238,7 @@
             this.dgv.RowHeadersWidth = 51;
             this.dgv.Size = new System.Drawing.Size(301, 176);
             this.dgv.TabIndex = 5;
-            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
+            this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             this.dgv.Click += new System.EventHandler(this.dgv_Click);
             // 
             // Id

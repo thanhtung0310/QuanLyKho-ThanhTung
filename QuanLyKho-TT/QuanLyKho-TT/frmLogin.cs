@@ -21,10 +21,13 @@ namespace QuanLyKho_TT
         public frmLogin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(0, 0);
         }
 
         public static string tendangnhap;
         public static string matkhaucu;
+        public static string quyen;
 
         private void labelSignUp_Click(object sender, EventArgs e)
         {
@@ -42,9 +45,11 @@ namespace QuanLyKho_TT
             dbAccess.readDatathroughAdapter(query, dtUsers);
             if (dtUsers.Rows.Count != 0)
             {
+                quyen = dtUsers.Rows[0]["IdRole"].ToString();
                 MessageBox.Show("Đăng nhập thành công!!!", "Thông báo.");
                 tendangnhap = username;
                 matkhaucu = password;
+                
                 main.Show();
                 Hide();
             }

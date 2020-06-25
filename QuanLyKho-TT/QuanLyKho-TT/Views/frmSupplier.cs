@@ -23,6 +23,8 @@ namespace QuanLyKho_TT.Views
         public frmSupplier()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(0, 0);
         }
 
         private void frmSupplier_Load(object sender, EventArgs e)

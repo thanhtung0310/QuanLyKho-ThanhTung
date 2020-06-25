@@ -20,6 +20,8 @@ namespace QuanLyKho_TT.Views
         public frmUser()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(0, 0);
         }
 
         private void frmUser_Load(object sender, EventArgs e)

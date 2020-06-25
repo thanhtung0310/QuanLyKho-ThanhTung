@@ -157,10 +157,11 @@
             // 
             this.groupControl1.Controls.Add(this.labelIn);
             this.groupControl1.Controls.Add(this.label1);
-            this.groupControl1.Location = new System.Drawing.Point(55, 208);
+            this.groupControl1.Location = new System.Drawing.Point(39, 208);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(152, 141);
             this.groupControl1.TabIndex = 2;
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // labelIn
             // 
@@ -168,11 +169,12 @@
             this.labelIn.AutoSize = true;
             this.labelIn.Font = new System.Drawing.Font("Cambria", 14F);
             this.labelIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelIn.Location = new System.Drawing.Point(45, 80);
+            this.labelIn.Location = new System.Drawing.Point(39, 80);
             this.labelIn.Name = "labelIn";
             this.labelIn.Size = new System.Drawing.Size(77, 28);
             this.labelIn.TabIndex = 1;
             this.labelIn.Text = "99998";
+            this.labelIn.Click += new System.EventHandler(this.labelIn_Click);
             // 
             // label1
             // 
@@ -320,6 +322,7 @@
             this.nhap.HeaderText = "Lượng nhập";
             this.nhap.MinimumWidth = 6;
             this.nhap.Name = "nhap";
+            this.nhap.Width = 125;
             // 
             // xuat
             // 
@@ -327,6 +330,7 @@
             this.xuat.HeaderText = "Lượng xuất";
             this.xuat.MinimumWidth = 6;
             this.xuat.Name = "xuat";
+            this.xuat.Width = 125;
             // 
             // frmMain
             // 
@@ -350,6 +354,7 @@
             this.Controls.Add(this.buttonImport);
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmMain.IconOptions.LargeImage")));
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "frmMain";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);

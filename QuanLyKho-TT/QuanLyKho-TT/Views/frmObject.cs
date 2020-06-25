@@ -21,6 +21,8 @@ namespace QuanLyKho_TT.Views
         public frmObject()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(0, 0);
         }
 
         private void frmObject_Load(object sender, EventArgs e)
@@ -40,6 +42,10 @@ namespace QuanLyKho_TT.Views
 
             da.Fill(dt);
             dgv.DataSource = dt;
+            cbbUnitB.DataSource = dt;
+            cbbUnitB.DisplayMember = "IdUnit";
+            cbbSupplierB.DataSource = dt;
+            cbbSupplierB.DisplayMember = "IdSupplier";
 
             //lấy danh sách đơn vị đo
             SqlDataAdapter da1 = new SqlDataAdapter("select * from Unit", AccessDataBase.connection);
@@ -49,8 +55,7 @@ namespace QuanLyKho_TT.Views
             dgv1.DataSource = dt1;
             cbbUnitA.DataSource = dt1;
             cbbUnitA.DisplayMember = "Id";
-            cbbUnitB.DataSource = dt1;
-            cbbUnitB.DisplayMember = "Id";
+            
 
             //lấy danh sách nhà cung cấp
             SqlDataAdapter da2 = new SqlDataAdapter("select Id, DisplayName from Supplier", AccessDataBase.connection);
@@ -60,8 +65,7 @@ namespace QuanLyKho_TT.Views
             dgv2.DataSource = dt2;
             cbbSupplierA.DataSource = dt2;
             cbbSupplierA.DisplayMember = "Id";
-            cbbSupplierB.DataSource = dt2;
-            cbbSupplierB.DisplayMember = "Id";
+            
         }
 
         void clearData()
@@ -205,6 +209,17 @@ namespace QuanLyKho_TT.Views
             Views.frmUser frmUser = new Views.frmUser();
             frmUser.Show();
             Hide();
+        }
+
+        private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                //Lưu lại dòng dữ liệu vừa kích chọn
+                DataGridViewRow row = this.dgv.Rows[e.RowIndex];
+                //Đưa dữ liệu vào textbox
+                tbNameB.Text = row.Cells[1].Value.ToString();
+            }
         }
     }
 }

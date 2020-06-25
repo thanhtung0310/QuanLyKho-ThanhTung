@@ -20,6 +20,8 @@ namespace QuanLyKho_TT.Views
         public frmUnit()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(0, 0);
         }
 
         private void frmUnit_Load(object sender, EventArgs e)
@@ -94,7 +96,7 @@ namespace QuanLyKho_TT.Views
         {
             if (tbNameB.Text == "")
             {
-                MessageBox.Show("Vui lòng kiểm tra lại thông tin nhập.", "Thông báo.");
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin xóa.", "Thông báo.");
             }
             else
             {
@@ -104,12 +106,6 @@ namespace QuanLyKho_TT.Views
                 MessageBox.Show("Xóa thành công.", "Thông báo.");
             }            
             loadData();
-        }
-
-        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int i = dgv.CurrentRow.Index;
-            tbNameB.Text = dgv.Rows[i].Cells[1].Value.ToString();
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -146,6 +142,17 @@ namespace QuanLyKho_TT.Views
             Views.frmUser frmUser = new Views.frmUser();
             frmUser.Show();
             Hide();
+        }
+
+        private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                //Lưu lại dòng dữ liệu vừa kích chọn
+                DataGridViewRow row = this.dgv.Rows[e.RowIndex];
+                //Đưa dữ liệu vào textbox
+                tbNameB.Text = row.Cells[1].Value.ToString();
+            }
         }
     }
 }
