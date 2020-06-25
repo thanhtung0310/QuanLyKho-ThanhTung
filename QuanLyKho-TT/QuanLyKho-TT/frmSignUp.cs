@@ -21,6 +21,8 @@ namespace QuanLyKho_TT
         public frmSignUp()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(0, 0);
         }
 
         private void txbUsername_Click(object sender, EventArgs e)

@@ -21,6 +21,8 @@ namespace QuanLyKho_TT.Views
         public frmExport()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(0, 0);
         }
 
         private void frmExport_Load(object sender, EventArgs e)

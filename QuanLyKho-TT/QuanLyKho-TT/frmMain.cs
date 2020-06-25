@@ -19,6 +19,8 @@ namespace QuanLyKho_TT
         public frmMain()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(0, 0);
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -147,6 +149,16 @@ namespace QuanLyKho_TT
             {
                 e.Cancel = true;
             }                    
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void labelIn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -21,6 +21,8 @@ namespace QuanLyKho_TT
         public frmLogin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(0, 0);
         }
 
         public static string tendangnhap;
