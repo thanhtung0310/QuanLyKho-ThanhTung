@@ -53,9 +53,10 @@
             // logo
             // 
             this.logo.Image = global::QuanLyKho_TT.Properties.Resources.logo;
-            this.logo.Location = new System.Drawing.Point(12, 12);
+            this.logo.Location = new System.Drawing.Point(12, 15);
+            this.logo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(174, 47);
+            this.logo.Size = new System.Drawing.Size(171, 47);
             this.logo.TabIndex = 24;
             this.logo.TabStop = false;
             this.logo.Click += new System.EventHandler(this.logo_Click);
@@ -63,9 +64,10 @@
             // avatar
             // 
             this.avatar.Image = global::QuanLyKho_TT.Properties.Resources.avatar;
-            this.avatar.Location = new System.Drawing.Point(660, 12);
+            this.avatar.Location = new System.Drawing.Point(557, 4);
+            this.avatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.avatar.Name = "avatar";
-            this.avatar.Size = new System.Drawing.Size(73, 68);
+            this.avatar.Size = new System.Drawing.Size(72, 68);
             this.avatar.TabIndex = 23;
             this.avatar.TabStop = false;
             this.avatar.Click += new System.EventHandler(this.avatar_Click);
@@ -75,9 +77,9 @@
             this.labelHello.AutoSize = true;
             this.labelHello.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Italic);
             this.labelHello.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.labelHello.Location = new System.Drawing.Point(491, 12);
+            this.labelHello.Location = new System.Drawing.Point(425, 23);
             this.labelHello.Name = "labelHello";
-            this.labelHello.Size = new System.Drawing.Size(163, 22);
+            this.labelHello.Size = new System.Drawing.Size(130, 17);
             this.labelHello.TabIndex = 22;
             this.labelHello.Text = "Chào DisplayName,";
             // 
@@ -85,9 +87,9 @@
             // 
             this.labelHome.AutoSize = true;
             this.labelHome.Font = new System.Drawing.Font("Cambria", 10F);
-            this.labelHome.Location = new System.Drawing.Point(192, 13);
+            this.labelHome.Location = new System.Drawing.Point(186, 30);
             this.labelHome.Name = "labelHome";
-            this.labelHome.Size = new System.Drawing.Size(154, 20);
+            this.labelHome.Size = new System.Drawing.Size(131, 16);
             this.labelHome.TabIndex = 0;
             this.labelHome.Text = "< Về màn hình chính";
             this.labelHome.Click += new System.EventHandler(this.labelHome_Click);
@@ -96,9 +98,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(13, 110);
+            this.label5.Location = new System.Drawing.Point(11, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(160, 26);
+            this.label5.Size = new System.Drawing.Size(132, 21);
             this.label5.TabIndex = 38;
             this.label5.Text = "Mật khẩu mới:";
             // 
@@ -106,9 +108,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(13, 66);
+            this.label4.Location = new System.Drawing.Point(11, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 26);
+            this.label4.Size = new System.Drawing.Size(117, 21);
             this.label4.TabIndex = 37;
             this.label4.Text = "Mật khẩu cũ:";
             // 
@@ -117,9 +119,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 22F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(188, 101);
+            this.label2.Location = new System.Drawing.Point(161, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(378, 43);
+            this.label2.Size = new System.Drawing.Size(308, 36);
             this.label2.TabIndex = 35;
             this.label2.Text = "THAY ĐỔI MẬT KHẨU";
             // 
@@ -127,9 +129,9 @@
             // 
             this.labelDisplayName.AutoSize = true;
             this.labelDisplayName.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Bold);
-            this.labelDisplayName.Location = new System.Drawing.Point(13, 24);
+            this.labelDisplayName.Location = new System.Drawing.Point(11, 20);
             this.labelDisplayName.Name = "labelDisplayName";
-            this.labelDisplayName.Size = new System.Drawing.Size(166, 26);
+            this.labelDisplayName.Size = new System.Drawing.Size(139, 21);
             this.labelDisplayName.TabIndex = 34;
             this.labelDisplayName.Text = "Tên đăng nhập:";
             // 
@@ -138,10 +140,11 @@
             this.tbNewPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbNewPass.Font = new System.Drawing.Font("Cambria", 13F);
             this.tbNewPass.ForeColor = System.Drawing.Color.Black;
-            this.tbNewPass.Location = new System.Drawing.Point(272, 110);
+            this.tbNewPass.Location = new System.Drawing.Point(233, 89);
+            this.tbNewPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbNewPass.Name = "tbNewPass";
             this.tbNewPass.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbNewPass.Size = new System.Drawing.Size(317, 26);
+            this.tbNewPass.Size = new System.Drawing.Size(272, 21);
             this.tbNewPass.TabIndex = 3;
             // 
             // tbOldPass
@@ -149,10 +152,11 @@
             this.tbOldPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbOldPass.Font = new System.Drawing.Font("Cambria", 13F);
             this.tbOldPass.ForeColor = System.Drawing.Color.Black;
-            this.tbOldPass.Location = new System.Drawing.Point(272, 66);
+            this.tbOldPass.Location = new System.Drawing.Point(233, 54);
+            this.tbOldPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbOldPass.Name = "tbOldPass";
             this.tbOldPass.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbOldPass.Size = new System.Drawing.Size(317, 26);
+            this.tbOldPass.Size = new System.Drawing.Size(272, 21);
             this.tbOldPass.TabIndex = 2;
             // 
             // buttonEdit
@@ -165,9 +169,10 @@
             this.buttonEdit.Appearance.Options.UseBorderColor = true;
             this.buttonEdit.Appearance.Options.UseFont = true;
             this.buttonEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonEdit.Location = new System.Drawing.Point(300, 350);
+            this.buttonEdit.Location = new System.Drawing.Point(257, 284);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(131, 45);
+            this.buttonEdit.Size = new System.Drawing.Size(112, 37);
             this.buttonEdit.TabIndex = 27;
             this.buttonEdit.Text = "Cập nhật";
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
@@ -176,9 +181,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(13, 154);
+            this.label1.Location = new System.Drawing.Point(11, 125);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 26);
+            this.label1.Size = new System.Drawing.Size(213, 21);
             this.label1.TabIndex = 40;
             this.label1.Text = "Xác nhận mật khẩu mới:";
             // 
@@ -187,19 +192,20 @@
             this.tbNewPass2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbNewPass2.Font = new System.Drawing.Font("Cambria", 13F);
             this.tbNewPass2.ForeColor = System.Drawing.Color.Black;
-            this.tbNewPass2.Location = new System.Drawing.Point(272, 154);
+            this.tbNewPass2.Location = new System.Drawing.Point(233, 125);
+            this.tbNewPass2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbNewPass2.Name = "tbNewPass2";
             this.tbNewPass2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbNewPass2.Size = new System.Drawing.Size(317, 26);
+            this.tbNewPass2.Size = new System.Drawing.Size(272, 21);
             this.tbNewPass2.TabIndex = 4;
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Cambria", 13F);
-            this.labelName.Location = new System.Drawing.Point(267, 24);
+            this.labelName.Location = new System.Drawing.Point(229, 20);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(145, 26);
+            this.labelName.Size = new System.Drawing.Size(120, 21);
             this.labelName.TabIndex = 1;
             this.labelName.Text = "tên đăng nhập";
             // 
@@ -213,9 +219,11 @@
             this.groupBox1.Controls.Add(this.labelDisplayName);
             this.groupBox1.Controls.Add(this.tbNewPass);
             this.groupBox1.Controls.Add(this.tbOldPass);
-            this.groupBox1.Location = new System.Drawing.Point(65, 147);
+            this.groupBox1.Location = new System.Drawing.Point(56, 119);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(623, 197);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(534, 160);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             // 
@@ -224,18 +232,18 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Underline);
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(528, 37);
+            this.label7.Location = new System.Drawing.Point(455, 43);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 22);
+            this.label7.Size = new System.Drawing.Size(70, 17);
             this.label7.TabIndex = 42;
             this.label7.Text = "Đăng xuất";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // frmUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 416);
+            this.ClientSize = new System.Drawing.Size(641, 338);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
@@ -245,6 +253,7 @@
             this.Controls.Add(this.avatar);
             this.Controls.Add(this.labelHello);
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmUser.IconOptions.LargeImage")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmUser";
             this.Text = "Người dùng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmUser_FormClosing);
